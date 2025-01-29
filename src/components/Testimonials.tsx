@@ -36,7 +36,7 @@ const Testimonials = () => {
       },
     ],
     customPaging: (i: number) => (
-      <div className={`custom-dot custom-dot-${i}`}></div> 
+      <div className={`custom-dot relative bottom-44 custom-dot-${i}`}></div> 
     ),
   };
 
@@ -68,11 +68,11 @@ const Testimonials = () => {
         Testimonials"
       </h1>
       <div className="slider-container ">
-        <Slider {...settings} className=" text-[20px] mt-8  text-[#232323]  mx-auto  lg:w-[70%]  w-full">
+        <Slider {...settings} className=" text-[20px] mt-12  text-[#232323]  mx-auto  lg:w-[70%]  w-full">
           {testimonials.map((item, index) => (
             <div key={index} className="bg-white  relative mt-8 rounded-[25px] p-8">
               <img src={item.imgSrc} alt={item.name} className="absolute -top-6 z-[100000]  w-[12%]"/>
-              <div className="flex absolute right-8 top-16 lg:top-12 gap-1">
+              <div className="flex absolute right-8 top-12 gap-1">
                 {Array(5)
                   .fill(null)
                   .map((_, index) => (
@@ -96,7 +96,7 @@ const Testimonials = () => {
           ))}
         </Slider>
       </div>
-      <div className="bg-[#FD7904] lg:w-[90%] w-full mx-auto lg:mt-24 mt-20  flex items-center flex-col lg:flex-row gap-6 lg:gap-0 justify-between text-white p-4 lg:p-12">
+      <div className="bg-[#FD7904] lg:w-[90%] w-full mx-auto lg:-mt-12 -mt-20  flex items-center flex-col lg:flex-row gap-6 lg:gap-0 justify-between text-white p-4 lg:p-12">
         <div>
           <h1 className="text-bold text-[16px] lg:text-3xl">
             Ready to live without safety worries?

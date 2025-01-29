@@ -9,23 +9,23 @@ const Footer = () => {
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 place-items-center ">
         
             <div className="flex flex-col gap-4">
-            <img src={logo} alt="logo" className="w-[100%]"/>
+            <img src={logo} alt="logo" className="w-[60%]"/>
             <p className="flex items-center gap-3 ml-12"> <MdLocationOn className="text-white"/>203, Oakwook, 23b Creeks Avenue</p>
             <p className="flex items-center gap-3"> <IoIosCall className="text-white  ml-12"/>07081101605</p>
             <p className="flex items-center gap-3"> <IoMdMail className="text-white  ml-12"/>oscarnewman@gmail.com</p>
             </div>
-            <div className="flex flex-col gap-6 mt-6 lg:mt-36">
+            <div className="flex flex-col gap-6 mt-6 lg:mt-16">
               <p className="text-[14px]">Quick Links</p>
             <Link to = "/">Home</Link>
             <Link to ="#">About</Link>
             <Link to ="#">Register</Link>
             </div>
-            <div className="flex flex-col gap-6  mt-6 lg:mt-18">
+            <div className="flex flex-col gap-6   lg:-mt-2">
               <p className="text-[14px]">Legal Links</p>
             <Link to = "#">Terms</Link>
             <Link to ="#">Privacy Policy</Link>
             </div>
-            <div className="flex flex-col gap-6  mt-6 lg:mt-26">
+            <div className="flex flex-col gap-6  mt-8 lg:mt-8">
               <p className="text-[14px]">Social Media</p>
             <Link to = "#">Facebook</Link>
             <Link to ="#">Twitter</Link>

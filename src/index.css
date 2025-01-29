@@ -4,22 +4,18 @@
   box-sizing: "border-box";
 }
 
-.carousel-item {
-  padding: 0 10px;
-}
+
 .slick-slide {
-  margin-right: 15px; /* Adjust this value to control the gap between items */
+  margin-right: 20px; /* Adjust this value to control the gap between items */
 }
 
-.slick-list {
-  margin-left: -10px; /* Adjust left margin to account for the padding */
-  margin-right: -10px; /* Adjust right margin */
-}
+
 .slick-dots {
   bottom: 10px;
   display: flex;
   justify-content: center;
   padding: 0;
+
 }
 
 .slick-dots li button {
@@ -29,7 +25,6 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin: 0 5px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -40,7 +35,7 @@
   border-radius: 50%;
   margin: 0 5px;
   transition: all 0.3s ease-in-out;
-  margin-top: 20px;
+ 
 }
 
 .slick-dots li.slick-active .custom-dot {
