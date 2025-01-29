@@ -86,8 +86,8 @@ const Testimonials = () => {
                   <p className="text-sm">{item.about}</p>
                 </div>
                 <div className="flex gap-3 items-center">
-                  <div className="w-8 h-8 flex justify-center items-center bg-[#fd7904] rounded-full p-1">
-                    <AiFillLike  className=" text-[14px] text-white "/>
+                  <div className="w-8 h-8 relative bg-[#fd7904] rounded-full p-1">
+                    <AiFillLike  className=" text-[14px] absolute top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 text-white "/>
                   </div>
                   <span className="text-[14px] font-bold">Testimonial</span>
                 </div>
