@@ -4,7 +4,7 @@ const About = () => {
     <Element name = "about">
       <section
       
-        className="relative h-[450px] bg-cover bg-center my-24 "
+        className="relative h-[450px] bg-cover bg-center mt-20 "
         style={{ backgroundImage: "url('../image.jpg')" }}
       >
         <div className="absolute inset-0 bg-[#0c1841] opacity-80"></div>
