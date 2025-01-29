@@ -10,7 +10,7 @@ const About = () => {
         <div className="absolute inset-0 bg-[#0c1841] opacity-80"></div>
         <div className="z-10 p-8 text-white  flex flex-col justify-center  relative top-30 items-center gap-6">
           <h3 className="text-[#ffbf87] font-semibold text-[20px]">ABOUT US</h3>
-          <p className="lg:w-[35%] text-center">
+          <p className="lg:w-[45%] text-center">
             We Are Your Security Risk Management Company Of Choice. The Motivation
             for our emergence and market entry was predicated on growing
             insecurity and sophistry in the criminal activities with few providers

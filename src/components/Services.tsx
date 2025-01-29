@@ -33,7 +33,7 @@ const Services = () => {
   ];
   return (
     <Element name = "services">
-      <div className="px-10 lg:px-8 mb-8 grid  grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-16 lg:w-[40%] md:gap-40 mx-auto">
+      <div className="px-10 lg:px-8  mb-8 grid  grid-cols-1 lg:grid-cols-2 lg:place-items-center  lg:gap-x-55 max-md:gap-y-20 md:gap-y-20 max-md:gap-x-80 lg:w-[40%]   mx-auto">
         {
       services.map((service) => (
           <div key = {service.id} className="bg-[#f5f5f5] w-full lg:w-[200px] h-[250px] space-y-4 shadow-2xl p-4 flex flex-col gap-1 items-center justify-center rounded-[30px]">

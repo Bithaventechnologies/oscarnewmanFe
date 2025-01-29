@@ -15,3 +15,4 @@ declare module '*.jpg' {
     export default src;
   }
 declare module "react-scroll"
+declare module "react-slick";
