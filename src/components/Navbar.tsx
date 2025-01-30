@@ -36,19 +36,24 @@ const Navbar = () => {
       {/* Mobile */}
       <div
         className={` bg-white   font-semibold flex flex-col gap-12 z-[1000]  h-screen ${
-          openSidebar ? "translate-x-0 w-[50%]" : "-translate-x-full"
-        } transition-transform  ease-in-out duration-500 p-4 absolute left-0 top-0 bottom-0 `}
+          openSidebar ? "translate-x-0 w-[40%]" : "-translate-x-full"
+        } transition-transform  ease-in-out duration-500 p-6 absolute left-0 top-0 bottom-0 `}
       >
         {navItems.map((item, index) => (
           <Link
-            to="/"
-            key={index}
+          to={item.link}
+          smooth={true}
+          duration={500}
+          key={index}
+          
             className={`cursor-pointer ${
               activeNavbar === item.name && openSidebar
                 ? "text-[#fd7904]"
                 : "text-black"
             }`}
-            onClick={() => setActiveNavbar(item.name)}
+            onClick={() => {setActiveNavbar(item.name)
+              setOpenSidebar(false)
+            }}
           >
             {item.name}
           </Link>
