@@ -29,7 +29,7 @@ const Footer = () => {
               <p className="text-[14px]">Social Media</p>
             <Link to = "#">Facebook</Link>
             <Link to ="#">Twitter</Link>
-            <Link to ="#">Linkedin</Link>
+            <Link to ="#">LinkedIn</Link>
             </div>
            
           </div>
