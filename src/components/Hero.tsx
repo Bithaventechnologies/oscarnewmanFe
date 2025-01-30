@@ -2,13 +2,16 @@ import heroImg from "../assets/heroImg.svg";
 
 const Hero = () => {
   return (
-    
-    <div className="bg-[#09032e] relative px-10 lg:px-8 py-8 text-[#fff] mb-20 flex gap-40 justify-center">
-        <div className="absolute  inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div> 
+    <div className=" bg-[#09032e] relative px-10 lg:px-8 py-8 text-[#fff] mb-20 flex gap-40 justify-center">
+      <div className="absolute  inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
       <div className="lg:w-1/2 relative">
         <h1 className="lg:text-5xl  text-2xl font-bold">
-          Your <span className="text-[#fd7904]"> No.1  <br /> Security</span> Risk
-          Advisory & <br /> Management Company
+          Your{" "}
+          <span className="text-[#fd7904]">
+            {" "}
+            No.1 <br /> Security
+          </span>{" "}
+          Risk Advisory & <br /> Management Company
         </h1>
         <p className="mt-6 lg:w-[70%] relative">
           We've seen more than the majority in over 25 years in combined
@@ -27,7 +30,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <img className = "w-[30%] hidden lg:block" src={heroImg} alt="head"  />
+      <img className="w-[30%] hidden lg:block" src={heroImg} alt="head" />
     </div>
   );
 };

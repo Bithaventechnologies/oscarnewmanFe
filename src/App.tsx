@@ -1,18 +1,11 @@
-
-
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Home from "./components/home/Home";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Routes/routes";
 
 const App = () => {
-
-
   return (
-    <div className="w-full h-full ">
-      <Header />
-<Home/>
-      <Footer />
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 };
 
