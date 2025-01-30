@@ -33,13 +33,13 @@ const Services = () => {
   ];
   return (
     <Element name = "services">
-      <div className="px-10 lg:px-8  mb-20 grid  grid-cols-1 lg:grid-cols-2 lg:place-items-center  lg:gap-x-55 max-md:gap-y-20 md:gap-y-20 max-md:gap-x-80 lg:w-[40%]   mx-auto">
+      <div className=" px-10 lg:px-0 md:gap-x-12 mb-20 lg:mx-auto md:mx-auto grid  grid-cols-1 lg:grid-cols-2 md:grid-cols-2 place-items-center  lg:gap-x-55  max-md:gap-y-12 md:gap-y-20 lg:w-[60%] md:w-[70%] max-md:w-full w-full ">
         {
       services.map((service) => (
-          <div  data-aos="fade-left" key = {service.id} className="bg-[#f5f5f5] w-full lg:w-[200px] h-[250px] space-y-4 shadow-2xl p-4 flex flex-col gap-1 items-center justify-center rounded-[30px]">
-              <div className="bg-[#09032e] w-24 h-24 rounded-full p-2 flex justify-center items-center"><img src={service.imgSrc} alt={service.label} className="w-[60%] object-cover"/></div>
+          <div  data-aos="fade-left" key = {service.id} className="bg-[#f5f5f5]  lg:h-[300px]   space-y-4 shadow-2xl p-4 flex flex-col gap-2 items-center justify-center rounded-[30px]">
+              <div className="bg-[#09032e] lg:w-24 lg:h-24 md:w-18 md:h-18 w-12 h-12 rounded-full p-2 flex justify-center items-center"><img src={service.imgSrc} alt={service.label} className="lg:w-[60%] w-[80%] object-cover"/></div>
               <div className=" text-center">
-                  <p className="text-[#2e2e2e] font-bold">{service.label}</p>
+                  <p className="text-[#2e2e2e] mb-1 font-bold">{service.label}</p>
                   <p className="text-[#2e2e2e] text-sm">{service.desc}</p>
               </div>
               <button className="bg-[#09032e] hover:bg-blue-100 hover:text-black cursor-pointer w-[80px] p-2 rounded-[10px] text-white">Read more</button>
