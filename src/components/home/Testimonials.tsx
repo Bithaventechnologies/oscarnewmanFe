@@ -21,7 +21,7 @@ const Testimonials = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: true
         },
@@ -68,7 +68,7 @@ const Testimonials = () => {
         Testimonials"
       </h1>
       <div className="slider-container ">
-        <Slider {...settings} className=" text-[20px] mt-12  text-[#232323]  mx-auto  lg:w-[70%]  w-full">
+        <Slider {...settings} className=" text-[20px] mt-12  text-[#232323]  mx-auto  lg:w-[80%] w-full">
           {testimonials.map((item, index) => (
             <div key={index} className="bg-white  relative mt-8 rounded-[25px] p-8">
               <img src={item.imgSrc} alt={item.name} className="absolute -top-6 z-[100000]  w-[12%]"/>

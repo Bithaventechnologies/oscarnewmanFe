@@ -11,7 +11,7 @@ const About = () => {
         style={{ backgroundImage: "url('../image.jpg')" }}
       >
         <div className="absolute inset-0 bg-[#0c1841] opacity-80"></div>
-        <div className="z-10 p-8 text-white  flex flex-col justify-center  relative top-30 items-center gap-6">
+        <div className="z-10 p-8 text-white  flex flex-col justify-center  relative top-1/2 transform -translate-y-1/2 items-center gap-6">
           <h3 className="text-[#ffbf87] font-semibold text-[20px]">ABOUT US</h3>
           <p className="lg:w-[45%] text-center">
             We Are Your Security Risk Management Company Of Choice. The
@@ -34,11 +34,11 @@ const About = () => {
           </h3>
           <div className="w-16 h-1 bg-black " />
         </div>
-        <section className="  lg:flex-row flex-col lg:border-b-2 lg:pb-4 border-gray-400  max-h-[550px] flex justify-center gap-8 lg:gap-40  lg:px-28 mx-auto">
-          <div className="lg:w-1/2 lg:py-12 flex flex-col gap-4" data-aos="zoom-out-right">
+        <section className="  lg:flex-row flex-col  lg:pb-4   max-h-[550px] flex justify-center gap-8 lg:gap-10  lg:px-18 mx-auto">
+          <div className=" lg:py-12 flex flex-col gap-4 lg:w-1/3" data-aos="zoom-out-right">
             <img src={sec} alt="Security" className=" lg:pt-0 object-cover" />
           </div>
-          <div className="lg:w-1/2 lg:py-12 border-b-2 lg:pb-0 lg:border-none pb-4 border-gray-400">
+          <div className="lg:w-2/3 lg:py-12 lg:pb-0 pb-4 ">
             <p className="mb-4 text-[#fd7904] text-[16px] font-semibold">
               Our uniqueness in Guard provision is visibly demonstrated, they
               are the repository of all what protection is all about.
@@ -62,45 +62,48 @@ const About = () => {
               modern techniques of crime prevention and deterrence.
             </p>
           </div>
+          <hr />
         </section>
-        <div className="flex items-center gap-40 mt-8"  >
-          <img
+      <div className="lg:flex items-center    justify-center gap-14 mt-8 lg:mx-12 lg:w-[80%]"  > 
+           <img
           data-aos="fade-up"
             src={ilustration}
             alt="Illustration"
-            className=" lg:pt-0 object-cover w-[40%] hidden lg:block"
-          />
-          <div  data-aos="fade-left">
-          <div className="flex flex-col mt-12 lg:mt-0" >
+            className=" lg:pt-0 object-cover lg:w-[40%] hidden lg:block"
+          /> 
+           <div  data-aos="fade-left" className="flex flex-col w-full lg:w-[60%]">
+          <div className="flex flex-col mt-24 lg:mt-0" >
           <h3 className="text-[#fd7904] mb-8 font-semibold text-[20px]">
           Security Risk Advisory
           </h3>
           <div className="w-16 h-1 bg-black relative bottom-8" />
-          </div>
+          </div> 
         
-      
-            <ul  className="flex flex-col gap-8 ">
-              <li className="flex items-center gap-4" >
-                {" "}
-                <GiCheckMark className="text-green-500" />
-                Security Risk assessment and analysis for sites and systems.
-              </li>
-              <li className="flex items-center gap-4">
-                <GiCheckMark className="text-green-500" />
-                Corporate/business Security risk analysis /Penetration
-                testing.Security Risk mapping and risk mitigation designs.
-              </li>
-              <li className="flex items-center gap-4">
-                <GiCheckMark className="text-green-500" />
-                Security Risk design implementation supervision.
-              </li>
-              <li className="flex items-center gap-4">
-                <GiCheckMark className="text-green-500" />
-                Security Management Trainings.
-              </li>
-            </ul>
+      <div className="">
+       
+             <ul  className="flex flex-col gap-8  text-sm ">
+               <li className="flex items-center gap-4" >
+                 {" "}
+                 <GiCheckMark className="text-green-500" />
+                 Security Risk assessment and analysis for sites and systems.
+               </li>
+               <li className="flex items-center gap-4">
+                 <GiCheckMark className="text-green-500" />
+                 Corporate/business Security risk analysis /Penetration
+                 testing.Security Risk mapping and risk mitigation designs.
+               </li>
+               <li className="flex items-center gap-4">
+                 <GiCheckMark className="text-green-500" />
+                 Security Risk design implementation supervision.
+               </li>
+               <li className="flex items-center gap-4">
+                 <GiCheckMark className="text-green-500 " />
+                 Security Management Trainings.
+               </li>
+             </ul>
+     </div> 
           </div>
-        </div>
+        </div> 
       </div>
     </Element>
   );
