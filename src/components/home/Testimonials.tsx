@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import avatar from "../assets/avatar.png";
+import avatar from "../../assets/avatar.png";
 import { FaStar } from "react-icons/fa";
 import { AiFillLike } from "react-icons/ai";
 

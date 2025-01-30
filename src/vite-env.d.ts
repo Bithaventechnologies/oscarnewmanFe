@@ -16,3 +16,4 @@ declare module '*.jpg' {
   }
 declare module "react-scroll"
 declare module "react-slick";
+declare module "aos";

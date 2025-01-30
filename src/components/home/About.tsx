@@ -1,6 +1,6 @@
 import { Element } from "react-scroll";
-import sec from "../assets/sec.png";
-import ilustration from "../assets/illustration.png";
+import sec from "../../assets/sec.png";
+import ilustration from "../../assets/illustration.png";
 import { GiCheckMark } from "react-icons/gi";
 
 const About = () => {
@@ -35,7 +35,7 @@ const About = () => {
           <div className="w-16 h-1 bg-black " />
         </div>
         <section className="  lg:flex-row flex-col lg:border-b-2 lg:pb-4 border-gray-400  max-h-[550px] flex justify-center gap-8 lg:gap-40  lg:px-28 mx-auto">
-          <div className="lg:w-1/2 lg:py-12 flex flex-col gap-4">
+          <div className="lg:w-1/2 lg:py-12 flex flex-col gap-4" data-aos="zoom-out-right">
             <img src={sec} alt="Security" className=" lg:pt-0 object-cover" />
           </div>
           <div className="lg:w-1/2 lg:py-12 border-b-2 lg:pb-0 lg:border-none pb-4 border-gray-400">
@@ -63,14 +63,15 @@ const About = () => {
             </p>
           </div>
         </section>
-        <div className="flex items-center gap-40 mt-8">
+        <div className="flex items-center gap-40 mt-8"  >
           <img
+          data-aos="fade-up"
             src={ilustration}
             alt="Illustration"
             className=" lg:pt-0 object-cover w-[40%] hidden lg:block"
           />
-          <div>
-          <div className="flex flex-col mt-12 lg:mt-0">
+          <div  data-aos="fade-left">
+          <div className="flex flex-col mt-12 lg:mt-0" >
           <h3 className="text-[#fd7904] mb-8 font-semibold text-[20px]">
           Security Risk Advisory
           </h3>
@@ -78,8 +79,8 @@ const About = () => {
           </div>
         
       
-            <ul className="flex flex-col gap-8 ">
-              <li className="flex items-center gap-4">
+            <ul  className="flex flex-col gap-8 ">
+              <li className="flex items-center gap-4" >
                 {" "}
                 <GiCheckMark className="text-green-500" />
                 Security Risk assessment and analysis for sites and systems.
