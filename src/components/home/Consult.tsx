@@ -1,6 +1,6 @@
 import { IoIosCheckmarkCircle } from "react-icons/io";
-import securityManagement from "../assets/security Management.png"
-import avatar from "../assets/avatar.png"
+import securityManagement from "../../assets/security Management.png"
+import avatar from "../../assets/avatar.png"
 
 const Consult = () => {
   const benefits: string[] = [
@@ -27,9 +27,9 @@ const Consult = () => {
                   <span>Reasons</span> to Trust Us With Your Security
                 </p>
                 <div className=" bg-[#ffbf87] w-4 h-[2px] relative bottom-[1px]"/>
-                <div className="flex flex-col my-6 gap-4">
+                <div className="flex flex-col my-6 gap-4" >
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center gap-4">
+                    <div key={index}  className="flex items-center gap-4" >
                         < IoIosCheckmarkCircle size = {16} className="text-[#fd7904] "/>
                       <p className="text-white">{benefit}</p>
                     </div>
