@@ -4,18 +4,19 @@
   box-sizing: "border-box";
 }
 
+body {
+  font-family: "Montserrat", serif;
+}
 
 .slick-slide {
   margin-right: 20px; /* Adjust this value to control the gap between items */
 }
-
 
 .slick-dots {
   bottom: 10px;
   display: flex;
   justify-content: center;
   padding: 0;
-
 }
 
 .slick-dots li button {
@@ -35,10 +36,8 @@
   border-radius: 50%;
   margin: 0 5px;
   transition: all 0.3s ease-in-out;
- 
 }
 
 .slick-dots li.slick-active .custom-dot {
   background-color: #fd7904;
-
 }
