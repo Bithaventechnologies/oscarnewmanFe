@@ -3,7 +3,7 @@ import heroImg from "../assets/heroImg.svg";
 const Hero = () => {
   return (
     <div className=" bg-[#09032e] w-full h-[90vh] relative px-10 lg:px-18  py-8 text-[#fff] mb-20 flex gap-40 justify-center">
-      <div className="absolute  inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
+      <div className="absolute z-10  inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
       <div className="lg:w-2/3 relative">
         <h1 className="lg:text-5xl  text-2xl font-bold">
           Your{" "}
