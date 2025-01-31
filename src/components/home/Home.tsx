@@ -6,6 +6,8 @@ import Services from "./Services";
 import Testimonials from "./Testimonials";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Partners from "../Partners";
+import SecurityPartners from "../SecurityPartners";
 
 const Home = () => {
   useEffect(() => {
@@ -19,6 +21,8 @@ const Home = () => {
       <About />
       <Consult />
       <Testimonials />
+      <SecurityPartners/>
+      <Partners/>
     </div>
   );
 };
