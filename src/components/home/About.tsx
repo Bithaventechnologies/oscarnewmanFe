@@ -87,7 +87,7 @@ const About = () => {
             <div className="">
               <ul className="flex flex-col gap-8  text-sm ">
                 <li className="flex items-center gap-4">
-                  {" "}
+                 
                   <GiCheckMark className="text-green-500" />
                   Security Risk assessment and analysis for sites and systems.
                 </li>
