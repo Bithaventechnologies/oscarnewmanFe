@@ -65,8 +65,9 @@ const About = () => {
               modern techniques of crime prevention and deterrence.
             </p>
           </div>
-          <hr />
+        
         </section>
+        <hr />
         <div className="lg:flex items-center    justify-center gap-14 mt-8 lg:mx-12 lg:w-[80%] w-[75%]">
           <img
             data-aos="fade-up"
