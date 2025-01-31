@@ -5,14 +5,16 @@ import { GiCheckMark } from "react-icons/gi";
 
 const About = () => {
   return (
-    <Element name="about">
+    <Element name="about" className="bg-amber-300">
       <section
         className="relative h-[350px] bg-cover bg-center my-20 lg:my-2 "
         style={{ backgroundImage: "url('../image.jpg')" }}
       >
         <div className="absolute inset-0 bg-[#0c1841] opacity-80"></div>
         <div className="z-10 p-8 text-white  flex flex-col justify-center  relative top-1/2 transform -translate-y-1/2 items-center gap-6">
-          <h3 className="text-[#ffbf87] font-semibold text-[20px]">ABOUT US</h3>
+          <h3 className="text-[#ffbf87] font-semibold text-[20px] max-md:text-lg">
+            ABOUT US
+          </h3>
           <p className="lg:w-[45%] text-center">
             We Are Your Security Risk Management Company Of Choice. The
             Motivation for our emergence and market entry was predicated on
@@ -22,7 +24,7 @@ const About = () => {
             incorporated in the year 2013 by a team of seasoned security
             practitioners and investors.
           </p>
-          <button className="bg-[#fd7904] hover:bg-transparent hover:border transition-all duration-300 border-[#fd7904] w-[100px] p-2 cursor-pointer rounded-[10px] text-white">
+          <button className="bg-[#fd7904] hover:bg-transparent hover:border transition-all duration-300 border-[#fd7904] py-3 px-11 cursor-pointer rounded-[10px] text-white">
             Learn more
           </button>
         </div>
@@ -65,7 +67,6 @@ const About = () => {
               modern techniques of crime prevention and deterrence.
             </p>
           </div>
-        
         </section>
         <hr />
         <div className="lg:flex items-center    justify-center gap-14 mt-8 lg:mx-12 lg:w-[80%] w-[75%]">

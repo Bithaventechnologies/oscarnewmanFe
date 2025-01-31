@@ -1,14 +1,20 @@
 import { useState } from "react";
-import {Link} from "react-scroll"
+import { Link } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 
 const Navbar = () => {
-  const navItems = [{name:"Home", link: "/"}, {name:"About", link: "about"}, {name:"Services", link: "services"}, {name:"Blog", link: "blog"}, {name:"Contact", link: "contact"}];
+  const navItems = [
+    { name: "Home", link: "/" },
+    { name: "About", link: "about" },
+    { name: "Services", link: "services" },
+    { name: "Blog", link: "blog" },
+    { name: "Contact", link: "contact" },
+  ];
   const [activeNavbar, setActiveNavbar] = useState("Home");
   const [openSidebar, setOpenSidebar] = useState(false);
   return (
-    <div className="lg:mr-16 mr-6">
+    <div className="lg:mr-16 mr-6 ">
       {/* Desktop */}
       <div className="text-white lg:flex gap-12  font-semibold hidden">
         {navItems.map((item, index) => (
@@ -41,18 +47,18 @@ const Navbar = () => {
       >
         {navItems.map((item, index) => (
           <Link
-          to={item.link}
-          smooth={true}
-          duration={500}
-          key={index}
-          
+            to={item.link}
+            smooth={true}
+            duration={500}
+            key={index}
             className={`cursor-pointer ${
               activeNavbar === item.name && openSidebar
                 ? "text-[#fd7904]"
                 : "text-black"
             }`}
-            onClick={() => {setActiveNavbar(item.name)
-              setOpenSidebar(false)
+            onClick={() => {
+              setActiveNavbar(item.name);
+              setOpenSidebar(false);
             }}
           >
             {item.name}
