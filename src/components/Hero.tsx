@@ -30,7 +30,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="w-[40%] h-full  flex justify-center items-center">
+      <div className="w-[40%] h-full  flex justify-center items-center max-lg:hidden">
         <img
           sizes="150"
           className=" hidden lg:block"

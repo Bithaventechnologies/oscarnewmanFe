@@ -1,52 +1,177 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
 import { MdLocationOn } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { IoMdMail } from "react-icons/io";
-const Footer = () => {
+import logo from "../assets/logo.svg";
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+
+interface FooterSectionProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+interface FooterLinkProps {
+  to: string;
+  children: React.ReactNode;
+}
+
+interface SocialLinkProps {
+  href: string;
+  icon: React.ReactNode;
+  ariaLabel: string;
+}
+
+const FooterSection: React.FC<FooterSectionProps> = ({ title, children }) => (
+  <div className="flex flex-col gap-6">
+    <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+    {children}
+  </div>
+);
+
+const FooterLink: React.FC<FooterLinkProps> = ({ to, children }) => (
+  <Link
+    to={to}
+    className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+  >
+    {children}
+  </Link>
+);
+
+const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, ariaLabel }) => (
+  <a
+    href={href}
+    aria-label={ariaLabel}
+    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-orange-500 transition-colors duration-200"
+  >
+    {icon}
+  </a>
+);
+
+const Footer: React.FC = () => {
+  const [email, setEmail] = React.useState<string>("");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Add newsletter subscription logic here
+    console.log("Subscribing email:", email);
+    setEmail("");
+  };
+
+  const socialLinks = [
+    {
+      href: "#",
+      icon: <FaFacebookF className="text-white text-lg" />,
+      ariaLabel: "Facebook",
+    },
+    {
+      href: "#",
+      icon: <FaTwitter className="text-white text-lg" />,
+      ariaLabel: "Twitter",
+    },
+    {
+      href: "#",
+      icon: <FaLinkedinIn className="text-white text-lg" />,
+      ariaLabel: "LinkedIn",
+    },
+  ];
+
   return (
-    <div className="bg-[#09032e] lg:px-28 text-[#FDFDF7]" id="footer">
-      <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 place-items-center ">
-        <div className="flex flex-col gap-4">
-          <img src={logo} alt="logo" className="w-[60%]" />
-          <p className="flex items-center gap-3 ml-12">
-            {" "}
-            <MdLocationOn className="text-white" />
-            203, Oakwook, 23b Creeks Avenue
-          </p>
-          <p className="flex items-center gap-3">
-            {" "}
-            <IoIosCall className="text-white  ml-12" />
-            07081101605
-          </p>
-          <p className="flex items-center gap-3">
-            {" "}
-            <IoMdMail className="text-white  ml-12" />
-            oscarnewman@gmail.com
-          </p>
-        </div>
-        <div className="flex flex-col gap-6 mt-6 lg:mt-16">
-          <p className="text-[14px]">Quick Links</p>
-          <Link to="/">Home</Link>
-          <Link to="#">About</Link>
-          <Link to="#">Register</Link>
-        </div>
-        <div className="flex flex-col gap-6   lg:-mt-2">
-          <p className="text-[14px]">Legal Links</p>
-          <Link to="#">Terms</Link>
-          <Link to="#">Privacy Policy</Link>
-        </div>
-        <div className="flex flex-col gap-6  mt-8 lg:mt-8">
-          <p className="text-[14px]">Social Media</p>
-          <Link to="#">Facebook</Link>
-          <Link to="#">Twitter</Link>
-          <Link to="#">LinkedIn</Link>
+    <footer className="bg-gradient-to-b from-[#09032e] to-[#060220]">
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Company Info */}
+          <div className="flex flex-col gap-6">
+            <img src={logo} alt="Company logo" className="w-40 mb-4" />
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200">
+                <MdLocationOn className="text-xl text-orange-400 flex-shrink-0" />
+                <p className="text-sm">203, Oakwook, 23b Creeks Avenue</p>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200">
+                <IoIosCall className="text-xl text-orange-400 flex-shrink-0" />
+                <p className="text-sm">07081101605</p>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200">
+                <IoMdMail className="text-xl text-orange-400 flex-shrink-0" />
+                <p className="text-sm">oscarnewman@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <FooterSection title="Quick Links">
+            <div className="flex flex-col gap-3">
+              <FooterLink to="/">Home</FooterLink>
+              <FooterLink to="/about">About</FooterLink>
+              <FooterLink to="/register">Register</FooterLink>
+            </div>
+          </FooterSection>
+
+          {/* Legal */}
+          <FooterSection title="Legal">
+            <div className="flex flex-col gap-3">
+              <FooterLink to="/terms">Terms of Service</FooterLink>
+              <FooterLink to="/privacy">Privacy Policy</FooterLink>
+            </div>
+          </FooterSection>
+
+          {/* Social & Newsletter */}
+          <FooterSection title="Connect With Us">
+            <div className="flex gap-4">
+              {socialLinks.map((link, index) => (
+                <SocialLink
+                  key={index}
+                  href={link.href}
+                  icon={link.icon}
+                  ariaLabel={link.ariaLabel}
+                />
+              ))}
+            </div>
+
+            {/* Newsletter */}
+            <form onSubmit={handleSubscribe} className="mt-6">
+              <h4 className="text-sm font-medium text-white mb-3">
+                Subscribe to our newsletter
+              </h4>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-2 bg-gray-800 rounded-lg text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors duration-200"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </FooterSection>
         </div>
       </div>
-      <p className="text-center text-sm py-12">
-        Copyrights 2024 by OscarNewman
-      </p>
-    </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-400">
+              © {new Date().getFullYear()} OscarNewman. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <FooterLink to="/privacy">Privacy</FooterLink>
+              <FooterLink to="/terms">Terms</FooterLink>
+              <FooterLink to="/sitemap">Sitemap</FooterLink>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 

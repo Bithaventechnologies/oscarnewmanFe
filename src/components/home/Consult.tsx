@@ -34,12 +34,17 @@ const Consult = () => {
               </div>
             ))}
           </div>
-          <button className="bg-[#fd7904] hover:bg-transparent hover:border transition-all duration-300 border-[#fd7904] w-[150px] p-3 cursor-pointer rounded-[10px] text-white">
+          <button className="bg-[#fd7904] hover:bg-transparent hover:border transition-all duration-300 border-[#fd7904] py-3 px-16 cursor-pointer rounded-[10px] text-white">
             Book a Consultation
           </button>
         </div>
-        <div className="lg:w-[30%]">
-          <img src={securityManagement} alt="" />
+        <div className="lg:w-[40%] max-md:w-[100%]  w-[90%]">
+          <img
+            src={securityManagement}
+            alt=""
+            sizes="120"
+            className="w-[100%] h-full object-contain rounded-4xl"
+          />
         </div>
       </section>
       <div className="flex flex-col gap-4  mt-28 text-white justify-center text-center">

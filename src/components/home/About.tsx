@@ -5,7 +5,7 @@ import { GiCheckMark } from "react-icons/gi";
 
 const About = () => {
   return (
-    <Element name="about" className="bg-amber-300">
+    <Element name="about" className="">
       <section
         className="relative h-[350px] bg-cover bg-center my-20 lg:my-2 "
         style={{ backgroundImage: "url('../image.jpg')" }}
