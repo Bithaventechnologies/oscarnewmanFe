@@ -41,7 +41,7 @@ const Navbar = () => {
 
       {/* Mobile */}
       <div
-        className={` bg-white   font-semibold flex flex-col gap-12 z-[1000]  h-screen ${
+        className={` bg-white   font-semibold flex flex-col gap-12 z-[1000] rounded-r-4xl  h-[70vh] ${
           openSidebar ? "translate-x-0 w-[40%]" : "-translate-x-full"
         } transition-transform  ease-in-out duration-500 p-6 absolute left-0 top-0 bottom-0 `}
       >
