@@ -33,12 +33,13 @@ const Services = () => {
   ];
   return (
     <Element name="services">
-      <div className=" px-10 lg:px-0 md:gap-x-12 mb-20  mx-auto grid  grid-cols-1 lg:grid-cols-2 md:grid-cols-2 place-items-center  lg:gap-x-55  max-md:gap-y-12 md:gap-y-20  w-[60%] max-md:w-[98%]">
+  <div className="mx-auto w-full max-w-4xl py-12 px-6 grid lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 overflow-hidden">
+
         {services.map((service) => (
           <div
-            data-aos="fade-left"
+            data-aos="fade-up"
             key={service.id}
-            className="bg-[#f5f5f5]  lg:h-[300px]   space-y-4 shadow-2xl p-4 flex flex-col gap-2 items-center justify-center rounded-[30px]"
+            className="bg-[#f5f5f5]   lg:h-[300px] w-full  space-y-4 shadow-2xl p-4 flex flex-col gap-2 items-center justify-center rounded-[30px]"
           >
             <div className="bg-[#09032e] lg:w-24 lg:h-24 md:w-18 md:h-18 w-12 h-12 rounded-full p-2 flex justify-center items-center">
               <img
@@ -51,13 +52,13 @@ const Services = () => {
               <p className="text-[#2e2e2e] mb-1 font-bold">{service.label}</p>
               <p className="text-[#2e2e2e] text-sm">{service.desc}</p>
             </div>
-            <button className="bg-[#09032e] hover:bg-blue-100 hover:text-black cursor-pointer px-9 py-4 rounded-[10px] text-white">
+            <button className="bg-[#09032e] hover:bg-blue-100 hover:text-black cursor-pointer px-6 py-3 rounded-[10px] text-white">
               Read more
             </button>
           </div>
         ))}
       </div>
-    </Element>
+     </Element>
   );
 };
 

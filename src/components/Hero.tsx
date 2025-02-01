@@ -2,7 +2,7 @@ import heroImg from "../assets/heroImg.svg";
 
 const Hero = () => {
   return (
-    <div className=" bg-[#09032e] w-full h-[90vh] relative px-10 lg:px-18  py-8 text-[#fff] mb-20 flex gap-40 justify-center">
+    <div className=" bg-[#09032e] w-full h-auto  relative px-10 lg:px-28  py-8 text-[#fff]  flex gap-40 ">
       <div className="absolute  inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75"></div>
       <div className="lg:w-2/3 relative">
         <h1 className="lg:text-5xl  text-2xl font-bold">
@@ -13,7 +13,7 @@ const Hero = () => {
           </span>{" "}
           Risk Advisory & <br /> Management Company
         </h1>
-        <p className="mt-6 lg:w-[70%] relative">
+        <p className="mt-6 lg:w-[80%]  relative">
           We've seen more than the majority in over 25 years in combined
           experience of safeguarding what matters, that is why Oscar Newman
           Concept Limited is the preferred security partner for businesses and
@@ -21,8 +21,8 @@ const Hero = () => {
           solutions, services, and strategies
         </p>
 
-        <div className="space-x-6 mt-6 flex gap-3 relative ">
-          <button className="text-[#fd7904] cursor-pointer px-12 py-3 border border-[#fd7904] rounded-md">
+        <div className="space-x-4 mt-6 flex gap-3 relative ">
+          <button className="text-[#fd7904] cursor-pointer px-4 py-2 border border-[#fd7904] rounded-md">
             Learn more
           </button>
           <button className="bg-[#fd7904] p-2 cursor-pointer rounded-md text-white">
