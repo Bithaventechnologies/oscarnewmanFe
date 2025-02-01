@@ -21,8 +21,8 @@ const Hero = () => {
           solutions, services, and strategies
         </p>
 
-        <div className="space-x-4 mt-6 flex gap-3 relative ">
-          <button className="text-[#fd7904] cursor-pointer px-4 py-2 border border-[#fd7904] rounded-md">
+        <div className="space-x-4 mt-6 flex gap-2 relative ">
+          <button className="text-[#fd7904] cursor-pointer px-7 py-1 border border-[#fd7904] rounded-md">
             Learn more
           </button>
           <button className="bg-[#fd7904] p-2 cursor-pointer rounded-md text-white">
