@@ -134,11 +134,11 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Newsletter */}
-            <form onSubmit={handleSubscribe} className="mt-6">
+            <form onSubmit={handleSubscribe} className="mt-8 mr-11">
               <h4 className="text-sm font-medium text-white mb-3">
                 Subscribe to our newsletter
               </h4>
-              <div className="flex gap-2">
+              <div className="flex gap-1 ">
                 <input
                   type="email"
                   value={email}
@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors duration-200"
+                  className="px-2 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors duration-200"
                 >
                   Subscribe
                 </button>
