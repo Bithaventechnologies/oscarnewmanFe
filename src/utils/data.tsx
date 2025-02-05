@@ -4,7 +4,7 @@ import part3 from "../assets/3.png";
 import part4 from "../assets/4.png";
 import part5 from "../assets/5.png";
 import part6 from "../assets/6.png";
-import part7 from "../assets/7.png";
+
 import part8 from "../assets/8.png";
 import part9 from "../assets/9.png";
 import part10 from "../assets/10.png";
@@ -42,7 +42,6 @@ export const partners = [
   part4,
   part5,
   part6,
-  part7,
   part8,
   part9,
   part10,
