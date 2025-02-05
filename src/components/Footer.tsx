@@ -4,7 +4,8 @@ import { MdLocationOn } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { IoMdMail } from "react-icons/io";
 import logo from "../assets/logo.svg";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { RiTwitterXFill } from "react-icons/ri";
 
 interface FooterSectionProps {
   title: string;
@@ -66,7 +67,7 @@ const Footer: React.FC = () => {
     },
     {
       href: "#",
-      icon: <FaTwitter className="text-white text-lg" />,
+      icon: <RiTwitterXFill className="text-white text-lg" />,
       ariaLabel: "Twitter",
     },
     {

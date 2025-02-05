@@ -64,7 +64,7 @@ const Testimonials = () => {
     <div className="bg-[#09032E] px-10 py-10  ">
       {" "}
       <h1 className="text-[#ffbf87] font-semibold text-[20px] text-center uppercase">
-        Testimonials"
+        Testimonials
       </h1>
       <div className="slider-container ">
         <Slider
