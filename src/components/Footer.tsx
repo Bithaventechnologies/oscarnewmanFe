@@ -4,7 +4,7 @@ import { MdLocationOn } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { IoMdMail } from "react-icons/io";
 import logo from "../assets/logo.svg";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 
 interface FooterSectionProps {
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     {
-      href: "#",
+      href: "https://www.facebook.com/profile.php?id=100063647945038",
       icon: <FaFacebookF className="text-white text-lg" />,
       ariaLabel: "Facebook",
     },
@@ -71,9 +71,14 @@ const Footer: React.FC = () => {
       ariaLabel: "Twitter",
     },
     {
-      href: "#",
+      href: "https://www.linkedin.com/company/oscar-newman-concept-limited/",
       icon: <FaLinkedinIn className="text-white text-lg" />,
       ariaLabel: "LinkedIn",
+    },
+    {
+      href: "https://www.instagram.com/oscarnewmangroup",
+      icon: <FaInstagram className="text-white text-lg" />,
+      ariaLabel: "Instagram",
     },
   ];
 

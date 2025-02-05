@@ -2,16 +2,23 @@ import React from "react";
 import { Element } from "react-scroll";
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import imageBg from "../../assets/contactus.png";
 
 const ContactUs: React.FC = () => {
   return (
     <Element name="contact">
       {/* Hero Section */}
       <section
-        className="relative h-[50vh] bg-cover bg-center"
-        style={{ backgroundImage: "url('../contact-bg.jpg')" }}
+        className="relative h-[80vh] bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${imageBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
-        <div className="absolute inset-0 bg-[#0a0f2d]  flex items-center">
+        {/* DARK OVERLAY (Reduced Opacity for Visibility) */}
+        <div className="absolute inset-0  bg-opacity-40 flex items-center">
           <div className="container mx-auto px-6 text-white text-center">
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
@@ -106,22 +113,6 @@ const ContactUs: React.FC = () => {
           </form>
         </motion.div>
       </section>
-
-      {/* Google Map Embed */}
-      {/* <section className="container mx-auto px-6 pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="overflow-hidden rounded-xl shadow-lg"
-        >
-          <iframe
-            title="Google Map"
-            className="w-full h-80"
-            src="https://www.google.com/maps/embed/v1/place?q=New+York&key=YOUR_GOOGLE_MAPS_API_KEY"
-            allowFullScreen
-          ></iframe>
-        </motion.div>
-      </section> */}
     </Element>
   );
 };

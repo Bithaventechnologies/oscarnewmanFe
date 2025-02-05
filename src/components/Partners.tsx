@@ -20,10 +20,10 @@ const Partners = () => {
       </h3>
       <div className="logo-scroller">
         <div className="logos-container" ref={scrollerRef}>
-          {[...partners, ...partners].map((logo, index) => (
+          {[...partners, ...partners].map((imagelogo, index) => (
             <img
               key={index}
-              src={logo}
+              src={imagelogo}
               alt={`Logo ${index}`}
               className="logo  p-2 "
             />
