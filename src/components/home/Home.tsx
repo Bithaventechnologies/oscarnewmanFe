@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Partners from "../Partners";
 import SecurityPartners from "../SecurityPartners";
+import Blog from "./Blog";
 
 const Home = () => {
   useEffect(() => {
@@ -21,8 +22,9 @@ const Home = () => {
       <About />
       <Consult />
       <Testimonials />
-      <SecurityPartners/>
-      <Partners/>
+      <Blog />
+      <SecurityPartners />
+      <Partners />
     </div>
   );
 };

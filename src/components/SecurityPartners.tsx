@@ -1,28 +1,47 @@
-import sec1 from "../assets/sec1.png"
-import sec2 from "../assets/sec2.png"
-import sec3 from "../assets/sec3.png"
-import sec4 from "../assets/sec4.png"
-import sec5 from "../assets/sec5.png"
+import sec1 from "../assets/sec1.png";
+import sec2 from "../assets/sec2.png";
+import sec3 from "../assets/sec3.png";
+import sec4 from "../assets/sec4.png";
+import sec5 from "../assets/sec5.png";
 
 const SecurityPartners = () => {
-  return (
-    <div className="h-auto w-[90%]  border-b pb-12 mx-auto px-8 place-items-center">
-         <h3 className="text-[#fd7904] mb-8 text-center py-4 font-semibold text-[20px] max-md:text-lg">OUR SECURITY PARTNERS FOR GUARDING</h3>
-         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-            <div className="flex flex-col gap-2 items-center"><img src={sec1} alt="" className="h-full border border-gray-300 object-cover shadow-lg p-4"/>
-            <span className="font-semibold">Nigerian Army</span></div>
-            <div className="flex flex-col gap-2 items-center"><img src={sec2} alt="" className="h-full border border-gray-300 object-cover shadow-lg p-4"/>
-            <span className="font-semibold">NSCDC</span></div>
-            <div className="flex flex-col gap-2 items-center"><img src={sec3} alt="" className="h-full border border-gray-300 object-cover shadow-lg p-4"/>
-            <span className="font-semibold">Nigerian Police Force</span></div>
-            <div className="flex flex-col gap-2 items-center"><img src={sec4} alt="" className="h-full border border-gray-300 object-cover shadow-lg p-4"/>
-            <span className="font-semibold">Nigerian Legion</span></div>
-            <div className="flex flex-col gap-2 items-center"><img src={sec5} alt="" className="h-full border border-gray-300 object-cover shadow-lg p-4"/>
-            <span className="font-semibold">VGN</span></div>
-         </div>
-         
-        </div>
-  )
-}
+  const partners = [
+    { img: sec1, name: "Nigerian Army" },
+    { img: sec2, name: "NSCDC" },
+    { img: sec3, name: "Nigerian Police Force" },
+    { img: sec4, name: "Nigerian Legion" },
+    { img: sec5, name: "VGN" },
+  ];
 
-export default SecurityPartners
+  return (
+    <div className="container mx-auto px-4 py-12">
+      <h3 className="text-2xl font-bold text-center text-[#fd7904] mb-10 uppercase tracking-wider">
+        Our Security Partners for Guarding
+      </h3>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {partners.map((partner, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center group transition-all duration-300"
+          >
+            <div
+              className="bg-white p-6 rounded-lg shadow-md mb-4 transition-all duration-300 
+              group-hover:shadow-xl group-hover:scale-105 w-full h-48 flex items-center justify-center"
+            >
+              <img
+                src={partner.img}
+                alt={partner.name}
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+            <span className="text-gray-800 font-semibold text-center group-hover:text-[#fd7904]">
+              {partner.name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default SecurityPartners;
