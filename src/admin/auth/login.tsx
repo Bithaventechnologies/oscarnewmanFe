@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "../../config/axiosConfig";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    const data = {
+      email,
+      password,
+    };
     e.preventDefault();
-    console.log("Logging in with:", { email, password });
+    try {
+      const response = await axios.post("/loginAdmin", data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+
     // Add authentication logic here
   };
 
