@@ -58,7 +58,7 @@ const ContactUs: React.FC = () => {
             </div>
             <div className="flex items-center gap-4 text-gray-800">
               <FaEnvelope className="text-orange-500 text-xl" />
-              <span className="text-lg">info@securitycompany.com</span>
+              <span className="text-lg">info@oscarnewmangroup.org</span>
             </div>
             <div className="flex items-start gap-4 text-gray-800">
               <FaMapMarkerAlt className="text-orange-500 text-xl" />
