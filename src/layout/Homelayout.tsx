@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Arrow = () => {
   const [scroll, setScroll] = useState(false);
@@ -48,6 +49,13 @@ const Arrow = () => {
 const Layout = () => {
   return (
     <>
+      <Helmet>
+        <title>Home - Oscar Newman Concept</title>
+        <meta
+          name="description"
+          content="Welcome to Oscar Newman Concept, your trusted security provider."
+        />
+      </Helmet>
       <Arrow />
       <Header />
       <Outlet />
