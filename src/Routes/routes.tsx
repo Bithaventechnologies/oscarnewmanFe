@@ -9,6 +9,8 @@ import DashboardLayout from "../layout/dashboardlay";
 import Postblog from "../admin/dashboard/PostBlog";
 import PostList from "../admin/dashboard/Postlist";
 
+import Blogpage from "../components/home/Blogpage";
+
 export const router = createBrowserRouter([
   {
     path: "",
@@ -21,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactUs />,
+      },
+      {
+        path: "blog/:id",
+        element: <Blogpage />,
       },
     ],
   },

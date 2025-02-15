@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "../../config/axiosConfig";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -8,6 +9,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
+    const toastloadingId = toast.loading("please wait...");
+
     const data = {
       email,
       password,
@@ -15,9 +18,14 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post("/loginAdmin", data);
+      toast.success("login Successfully...");
+      localStorage.setItem("adminToken", response.data.jwt);
+      navigate("/dash/allpost");
       console.log(response.data);
     } catch (error) {
       console.log(error);
+    } finally {
+      toast.dismiss(toastloadingId);
     }
 
     // Add authentication logic here
