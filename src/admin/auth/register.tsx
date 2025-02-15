@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "../../config/axiosConfig";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -7,9 +10,26 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const data = {
+    name,
+    email,
+    password,
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    const toastloadingId = toast.loading("Please wait....");
     e.preventDefault();
-    console.log("Registering with:", { name, email, password });
+    try {
+      const response = await axios.post("/registerAdmin", data);
+      toast.success("Register Successfully");
+      console.log(response.data.data);
+      navigate("/login");
+    } catch (error: any) {
+      console.log(error.response.data.message);
+    } finally {
+      toast.dismiss(toastloadingId);
+    }
+
     // Add registration logic here
   };
 

@@ -1,31 +1,40 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import axios from "../../config/axiosConfig";
 
 const Blog = () => {
-  const latestBlogs = [
-    {
-      id: 1,
-      title: "Latest Technology Trends",
-      excerpt: "Explore the cutting-edge technologies shaping our future...",
-      date: "February 5, 2025",
-      image: "/api/placeholder/400/250?text=Tech+Trends",
-    },
-    {
-      id: 2,
-      title: "Design Principles for Modern Web Apps",
-      excerpt:
-        "Key insights into creating intuitive and responsive interfaces...",
-      date: "January 28, 2025",
-      image: "/api/placeholder/400/250?text=Web+Design",
-    },
-    {
-      id: 3,
-      title: "Sustainable Innovation in Tech",
-      excerpt: "How technology can drive environmental sustainability...",
-      date: "January 15, 2025",
-      image: "/api/placeholder/400/250?text=Green+Tech",
-    },
-  ];
+  interface BlogType {
+    id: number;
+    img: string;
+    title: string;
+    excerpt: string;
+    date: string;
+  }
+
+  const [LatestBlog, setLatestBlog] = useState<BlogType[]>([]);
+
+  const token = localStorage.getItem("AdminToken");
+
+  const getBlogs = async () => {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data",
+    };
+
+    try {
+      const response = await axios.get("/getBlogs", { headers });
+      setLatestBlog(response.data);
+    } catch (error) {
+      toast.error("Failed to fetch blogs. Please try again later.");
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getBlogs();
+  }, []);
 
   return (
     <section className="py-12 bg-gray-100">
@@ -34,13 +43,13 @@ const Blog = () => {
           Latest Blog Posts
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
-          {latestBlogs.map((blog) => (
+          {LatestBlog.slice(0, 3).map((blog) => (
             <div
               key={blog.id}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all"
             >
               <img
-                src={blog.image}
+                src={blog.img}
                 alt={blog.title}
                 className="w-full h-48 object-cover"
               />
@@ -60,14 +69,18 @@ const Blog = () => {
             </div>
           ))}
         </div>
-        <div className="text-center mt-8">
-          <Link
-            to="/blog"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Visit Our Blog <ArrowRight className="ml-2" />
-          </Link>
-        </div>
+
+        {/* Show "Visit Our Blog" if there are more than 3 blogs */}
+        {LatestBlog.length > 3 && (
+          <div className="text-center mt-8">
+            <Link
+              to="/blog"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Visit Our Blog <ArrowRight className="ml-2" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
