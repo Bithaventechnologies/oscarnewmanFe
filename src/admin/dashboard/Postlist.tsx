@@ -52,7 +52,7 @@ const PostList = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 bg-gray-50">
+    <div className="h-screen overflow-y-scroll w-full p-6 ">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-bold text-gray-800">Latest Blog Posts</h2>
         <Link
