@@ -15,16 +15,9 @@ const Blog = () => {
 
   const [LatestBlog, setLatestBlog] = useState<BlogType[]>([]);
 
-  const token = localStorage.getItem("AdminToken");
-
   const getBlogs = async () => {
-    const headers = {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "multipart/form-data",
-    };
-
     try {
-      const response = await axios.get("/getBlogs", { headers });
+      const response = await axios.get("/getBlogs");
       setLatestBlog(response.data);
     } catch (error) {
       toast.error("Failed to fetch blogs. Please try again later.");
@@ -74,7 +67,7 @@ const Blog = () => {
         {LatestBlog.length > 3 && (
           <div className="text-center mt-8">
             <Link
-              to="/blog"
+              to="/allblog"
               className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               Visit Our Blog <ArrowRight className="ml-2" />
