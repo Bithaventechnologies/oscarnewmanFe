@@ -5,7 +5,7 @@ const DasHeader = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Remove token from storage
-    navigate("/signin"); // Redirect to login page
+    navigate("/login"); // Redirect to login page
   };
 
   return (

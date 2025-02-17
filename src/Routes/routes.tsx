@@ -12,6 +12,7 @@ import PostList from "../admin/dashboard/Postlist";
 import Blogpage from "../components/home/Blogpage";
 import AllBlog from "../components/home/AllBlog";
 import CreateAdmin from "../admin/dashboard/createAdmin";
+import Post from "../admin/dashboard/post";
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
       {
         path: "createadmin",
         element: <CreateAdmin />,
+      },
+      {
+        path: "post/:id",
+        element: <Post />,
       },
     ],
   },
