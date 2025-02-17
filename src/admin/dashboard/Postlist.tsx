@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
-import { Calendar, User, ArrowRight, Clock, X } from "lucide-react";
+import { Calendar, User, ArrowRight, Clock, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "../../config/axiosConfig";
@@ -18,7 +18,14 @@ interface BlogPost {
 
 const PostList = () => {
   const [Bloglist, setBloglist] = useState<BlogPost[]>([]);
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+
+  const token = localStorage.getItem("adminToken");
+  console.log(token);
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
+  };
 
   const getAllBlog = async () => {
     const toastloadingId = toast.loading("Please wait....");
@@ -28,6 +35,22 @@ const PostList = () => {
     } catch (error: any) {
       console.log(error);
       toast.error("Failed to fetch blog posts");
+    } finally {
+      toast.dismiss(toastloadingId);
+    }
+  };
+
+  const deleteBlog = async (id: number) => {
+    if (!window.confirm("Are you sure you want to delete this blog post?"))
+      return;
+    const toastloadingId = toast.loading("Deleting blog post...");
+    try {
+      await axios.delete(`/deleteBlog/${id}`, { headers });
+      setBloglist(Bloglist.filter((post) => post.id !== id));
+      toast.success("Blog post deleted successfully");
+    } catch (error: any) {
+      console.log(error);
+      toast.error("Failed to delete blog post");
     } finally {
       toast.dismiss(toastloadingId);
     }
@@ -91,46 +114,23 @@ const PostList = () => {
                 </div>
               </div>
               <div className="mt-4 flex gap-4">
-                <button
-                  className="text-blue-600 hover:text-blue-700 font-semibold"
-                  onClick={() => setSelectedPost(post)}
-                >
-                  Quick View
-                </button>
                 <Link
                   to={`/post/${post.id}`}
                   className="text-blue-600 hover:text-blue-700 font-semibold"
                 >
                   Read More
                 </Link>
+                <button
+                  className="text-red-600 hover:text-red-700 font-semibold flex items-center gap-1"
+                  onClick={() => deleteBlog(post.id)}
+                >
+                  <Trash2 size={16} /> Delete
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-
-      {selectedPost && (
-        <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center p-4">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full relative">
-            <button
-              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
-              onClick={() => setSelectedPost(null)}
-            >
-              <X size={24} />
-            </button>
-            <h2 className="text-2xl font-bold mb-4">{selectedPost.title}</h2>
-            <p className="text-gray-700 mb-4">{selectedPost.content}</p>
-            <div className="flex justify-end">
-              <Link
-                to={`/post/${selectedPost.id}`}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all"
-              >
-                Read Full Post
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
