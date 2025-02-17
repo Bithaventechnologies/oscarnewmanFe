@@ -43,7 +43,7 @@ const AllBlog = () => {
   }
 
   return (
-    <div className="w-full min-h-screen text-gray-100 p-6 overflow-y-auto">
+    <div className="w-full min-h-screen text-gray-50 p-6 overflow-y-auto">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto mb-12">
         <h1 className="text-4xl font-bold mb-4 text-[#060220] ">
@@ -53,25 +53,6 @@ const AllBlog = () => {
           Stay updated with the latest trends, analysis, and insights in the
           blockchain industry
         </p>
-      </div>
-
-      {/* Category Filter */}
-      <div className="max-w-7xl mx-auto mb-8 flex gap-4 overflow-x-auto pb-2">
-        {[
-          "All",
-          "Technology",
-          "Market Analysis",
-          "DeFi",
-          "NFTs",
-          "Security",
-        ].map((category) => (
-          <button
-            key={category}
-            className="px-4 py-2 rounded-full border border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-gray-900 transition-all duration-200 whitespace-nowrap"
-          >
-            {category}
-          </button>
-        ))}
       </div>
 
       {/* Blog Grid */}
@@ -88,13 +69,13 @@ const AllBlog = () => {
                   alt={blog.title}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4 bg-teal-500 text-gray-900 px-3 py-1 rounded-full text-sm font-medium">
+                <div className="absolute top-4 right-4 bg-[#fd7904] text-gray-50 px-3 py-1 rounded-full text-sm font-medium">
                   {blog.category}
                 </div>
               </div>
 
               <div className="p-6">
-                <h2 className="text-xl font-bold mb-3 hover:text-teal-400 transition-colors">
+                <h2 className="text-xl font-bold mb-3 hover:text-[#fd7904] transition-colors">
                   {blog.title}
                 </h2>
                 <p className="text-gray-400 mb-4 line-clamp-2">
