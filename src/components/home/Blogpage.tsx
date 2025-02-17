@@ -17,16 +17,11 @@ const Blogpage = () => {
   const [blog, setBlog] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const token = localStorage.getItem("AdminToken");
-
   useEffect(() => {
     const getBlogById = async () => {
       try {
-        const response = await axios.get(`/getBlog/${id}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(`/getBlog/${id}`);
+
         setBlog(response.data);
       } catch (error) {
         toast.error("Failed to load blog post.");

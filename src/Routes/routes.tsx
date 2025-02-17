@@ -10,6 +10,7 @@ import Postblog from "../admin/dashboard/PostBlog";
 import PostList from "../admin/dashboard/Postlist";
 
 import Blogpage from "../components/home/Blogpage";
+import AllBlog from "../components/home/AllBlog";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "blog/:id",
         element: <Blogpage />,
+      },
+      {
+        path: "allblog",
+        element: <AllBlog />,
       },
     ],
   },

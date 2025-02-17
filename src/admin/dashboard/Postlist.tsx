@@ -17,19 +17,13 @@ interface BlogPost {
 }
 
 const PostList = () => {
-  const token = localStorage.getItem("AdminToken");
   const [Bloglist, setBloglist] = useState<BlogPost[]>([]);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   const getAllBlog = async () => {
     const toastloadingId = toast.loading("Please wait....");
     try {
-      const response = await axios.get("/getBlogs", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.get("/getBlogs");
       setBloglist(response.data);
     } catch (error: any) {
       console.log(error);

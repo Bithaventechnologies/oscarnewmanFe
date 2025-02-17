@@ -16,6 +16,8 @@ import teaching from "../../assets/teaching.jpg";
 import ourstaff from "../../assets/ourr.jpg";
 import otherstauff from "../../assets/others.jpg";
 import Youngstaff from "../../assets/youngstaff.jpg";
+import cyber from "../../assets/cyberr.jpg";
+import cctv from "../../assets/cctv.jpg";
 
 interface AboutSectionProps {
   title: string;
@@ -182,6 +184,28 @@ const About: React.FC = () => {
         imageRight={true}
         icons={[Zap, ShieldCheck]}
         specialText="Digital Natives, Cutting-Edge Solutions"
+      />
+      <AboutSection
+        title="Cybersecurity Solutions"
+        description="Protect Your Digital World with Oscar Newman. 
+  In today's interconnected world, cybersecurity threats are becoming increasingly sophisticated, posing significant risks to individuals, businesses, and organizations. At Oscar Newman, we understand the importance of robust cybersecurity measures to safeguard your digital assets.
+
+  Our team of expert cybersecurity professionals possesses extensive knowledge and experience in designing, implementing, and managing cutting-edge cybersecurity solutions. We take a proactive approach to identify potential vulnerabilities, detect threats, and respond promptly to incidents."
+        image={cyber}
+        imageRight={false}
+        icons={[ShieldCheck, Globe]}
+        specialText="Trust Oscar Newman to Protect Your Digital World"
+      />
+      <AboutSection
+        title="CCTV Installations"
+        description="Secure Your Premises with Oscar Newman's CCTV Solutions. 
+  In today's uncertain world, ensuring the security and safety of your premises is paramount. At Oscar Newman, we specialize in designing, installing, and maintaining high-quality CCTV systems that provide unparalleled surveillance and protection.
+
+  Our team of experienced CCTV installation experts possesses extensive knowledge of the latest technologies and best practices. We work closely with clients to understand their unique security requirements and design customized CCTV solutions that meet their needs."
+        image={cctv}
+        imageRight={true}
+        icons={[ShieldCheck, Target]}
+        specialText="Trust Oscar Newman for Reliable CCTV Solutions"
       />
     </Element>
   );
