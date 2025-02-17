@@ -33,6 +33,14 @@ const Sidebar = () => {
               <span>Create Post</span>
             </Link>
           </li>
+          <li>
+            <Link
+              to="/dash/createAdmin"
+              className="flex items-center px-4 py-3 rounded-lg hover:bg-gray-800 hover:text-white transition-colors duration-200"
+            >
+              <span>Create Admin</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </aside>
