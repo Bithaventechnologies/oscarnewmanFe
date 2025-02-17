@@ -19,10 +19,12 @@ interface BlogPost {
 const PostList = () => {
   const [Bloglist, setBloglist] = useState<BlogPost[]>([]);
 
-  const token = localStorage.getItem("admiToken");
+  const token = localStorage.getItem("adminToken");
+  console.log(token);
 
   const headers = {
     Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
   };
 
   const getAllBlog = async () => {
