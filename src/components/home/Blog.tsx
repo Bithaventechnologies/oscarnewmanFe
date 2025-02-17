@@ -64,16 +64,15 @@ const Blog = () => {
         </div>
 
         {/* Show "Visit Our Blog" if there are more than 3 blogs */}
-        {LatestBlog.length > 3 && (
-          <div className="text-center mt-8">
-            <Link
-              to="/allblog"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              Visit Our Blog <ArrowRight className="ml-2" />
-            </Link>
-          </div>
-        )}
+
+        <div className="text-center mt-8">
+          <Link
+            to="/allblog"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Visit Our Blog <ArrowRight className="ml-2" />
+          </Link>
+        </div>
       </div>
     </section>
   );
