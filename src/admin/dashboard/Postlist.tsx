@@ -115,7 +115,7 @@ const PostList = () => {
               </div>
               <div className="mt-4 flex gap-4">
                 <Link
-                  to={`/post/${post.id}`}
+                  to={`/dash/post/${post.id}`}
                   className="text-blue-600 hover:text-blue-700 font-semibold"
                 >
                   Read More
