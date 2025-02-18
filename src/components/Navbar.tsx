@@ -1,47 +1,56 @@
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const [activeNavbar, setActiveNavbar] = useState("Home");
   const [openSidebar, setOpenSidebar] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
     { name: "Home", link: "/", isRoute: true },
     { name: "About", link: "about", isRoute: false },
     { name: "Services", link: "services", isRoute: false },
-    { name: "Blog", link: "blog", isRoute: false },
-    { name: "Contact", link: "/contact", isRoute: true }, // Contact is a route
+    { name: "Blog", link: "/allblog", isRoute: true },
+    { name: "Contact", link: "/contact", isRoute: true },
   ];
 
+  const handleNavigation = (path: string, isRoute: boolean) => {
+    if (isRoute) {
+      navigate(path);
+    }
+    setActiveNavbar(path);
+    setOpenSidebar(false);
+  };
+
   return (
-    <div className="lg:mr-16 mr-6">
+    <div className="relative z-50">
       {/* Desktop Navbar */}
-      <div className="text-white lg:flex gap-12 font-semibold hidden">
+      <div className="hidden lg:flex gap-12 font-semibold text-white">
         {navItems.map((item, index) =>
           item.isRoute ? (
             <RouterLink
-              to={item.link}
               key={index}
-              className={`cursor-pointer ${
-                activeNavbar === item.name ? "text-[#fd7904]" : "text-white"
+              to={item.link}
+              className={`cursor-pointer transition ${
+                activeNavbar === item.link ? "text-[#fd7904]" : "text-white"
               }`}
-              onClick={() => setActiveNavbar(item.name)}
+              onClick={() => handleNavigation(item.link, true)}
             >
               {item.name}
             </RouterLink>
           ) : (
             <ScrollLink
+              key={index}
               to={item.link}
               smooth={true}
               duration={500}
-              key={index}
-              className={`cursor-pointer ${
-                activeNavbar === item.name ? "text-[#fd7904]" : "text-white"
+              className={`cursor-pointer transition ${
+                activeNavbar === item.link ? "text-[#fd7904]" : "text-white"
               }`}
-              onClick={() => setActiveNavbar(item.name)}
+              onClick={() => handleNavigation(item.link, false)}
             >
               {item.name}
             </ScrollLink>
@@ -49,52 +58,58 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Sidebar Button */}
       <div
-        className="cursor-pointer lg:hidden text-white text-[20px]"
+        className="lg:hidden text-white text-[24px] cursor-pointer"
         onClick={() => setOpenSidebar(!openSidebar)}
       >
         {!openSidebar ? <GiHamburgerMenu /> : <IoCloseSharp />}
       </div>
 
+      {/* Mobile Sidebar Menu */}
       <div
-        className={`bg-white font-semibold flex flex-col gap-12 z-[1000] rounded-r-4xl h-[70vh] ${
-          openSidebar ? "translate-x-0 w-[40%]" : "-translate-x-full"
-        } transition-transform ease-in-out duration-500 p-6 absolute left-0 top-0 bottom-0`}
+        className={`fixed top-0 left-0 h-full w-[70%] bg-white text-black shadow-lg transition-transform duration-500 ease-in-out transform ${
+          openSidebar ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
-        {navItems.map((item, index) =>
-          item.isRoute ? (
-            <RouterLink
-              to={item.link}
-              key={index}
-              className={`cursor-pointer ${
-                activeNavbar === item.name ? "text-[#fd7904]" : "text-black"
-              }`}
-              onClick={() => {
-                setActiveNavbar(item.name);
-                setOpenSidebar(false);
-              }}
-            >
-              {item.name}
-            </RouterLink>
-          ) : (
-            <ScrollLink
-              to={item.link}
-              smooth={true}
-              duration={500}
-              key={index}
-              className={`cursor-pointer ${
-                activeNavbar === item.name ? "text-[#fd7904]" : "text-black"
-              }`}
-              onClick={() => {
-                setActiveNavbar(item.name);
-                setOpenSidebar(false);
-              }}
-            >
-              {item.name}
-            </ScrollLink>
-          )
-        )}
+        <div className="flex flex-col p-6 space-y-6">
+          {/* Close Button */}
+          <div
+            className="self-end text-2xl cursor-pointer"
+            onClick={() => setOpenSidebar(false)}
+          >
+            <IoCloseSharp />
+          </div>
+
+          {/* Navigation Links */}
+          {navItems.map((item, index) =>
+            item.isRoute ? (
+              <RouterLink
+                key={index}
+                to={item.link}
+                className={`cursor-pointer text-lg ${
+                  activeNavbar === item.link ? "text-[#fd7904]" : "text-black"
+                }`}
+                onClick={() => handleNavigation(item.link, true)}
+              >
+                {item.name}
+              </RouterLink>
+            ) : (
+              <ScrollLink
+                key={index}
+                to={item.link}
+                smooth={true}
+                duration={500}
+                className={`cursor-pointer text-lg ${
+                  activeNavbar === item.link ? "text-[#fd7904]" : "text-black"
+                }`}
+                onClick={() => handleNavigation(item.link, false)}
+              >
+                {item.name}
+              </ScrollLink>
+            )
+          )}
+        </div>
       </div>
     </div>
   );

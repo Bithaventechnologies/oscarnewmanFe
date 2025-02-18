@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "../../config/axiosConfig";
 import toast from "react-hot-toast";
 
@@ -14,14 +15,15 @@ interface BlogPost {
 }
 
 const AllBlog = () => {
-  const [allBlog, setallBlog] = useState<BlogPost[]>([]);
+  const [allBlog, setAllBlog] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const getAllBlog = async () => {
     try {
       setLoading(true);
       const response = await axios.get("/getBlogs");
-      setallBlog(response.data);
+      setAllBlog(response.data);
     } catch (error) {
       toast.error("Failed to fetch blogs. Please try again later.");
       console.error(error);
@@ -37,7 +39,7 @@ const AllBlog = () => {
   if (loading) {
     return (
       <div className="w-full h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-teal-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#060220]"></div>
       </div>
     );
   }
@@ -46,12 +48,12 @@ const AllBlog = () => {
     <div className="w-full min-h-screen text-gray-50 p-6 overflow-y-auto">
       {/* Header Section */}
       <div className="max-w-7xl mx-auto mb-12">
-        <h1 className="text-4xl font-bold mb-4 text-[#060220] ">
+        <h1 className="text-4xl font-bold mb-4 text-[#060220]">
           Latest Insights
         </h1>
         <p className="text-gray-400 text-lg">
           Stay updated with the latest trends, analysis, and insights in the
-          blockchain industry
+          industry
         </p>
       </div>
 
@@ -111,6 +113,14 @@ const AllBlog = () => {
                     )}
                   </div>
                 </div>
+
+                {/* Read More Button */}
+                <button
+                  onClick={() => navigate(`/blog/${blog.id}`)}
+                  className="mt-4 inline-block bg-[#fd7904] text-white py-2 px-4 rounded-lg font-semibold transition-transform transform hover:scale-105"
+                >
+                  Read More
+                </button>
               </div>
             </article>
           ))
