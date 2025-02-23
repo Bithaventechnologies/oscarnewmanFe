@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", link: "/", isRoute: true },
-    { name: "About", link: "about", isRoute: false },
+    { name: "About", link: "aboutus", isRoute: true },
     { name: "Services", link: "services", isRoute: false },
     { name: "Blog", link: "/allblog", isRoute: true },
     { name: "Contact", link: "/contact", isRoute: true },
