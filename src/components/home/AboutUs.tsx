@@ -1,8 +1,30 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import one from "../../assets/Screenshot_23-2-2025_75329_.jpeg";
+import two from "../../assets/Screenshot_23-2-2025_7533_.jpeg";
+import three from "../../assets/Screenshot_23-2-2025_75345_.jpeg";
+import four from "../../assets/Screenshot_23-2-2025_75413_.jpeg";
+import five from "../../assets/Screenshot_23-2-2025_75430_.jpeg";
+import six from "../../assets/Screenshot_23-2-2025_75451_.jpeg";
+import seven from "../../assets/Screenshot_23-2-2025_75513_.jpeg";
+
 const AboutUs = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Ensures animation happens only once
+    });
+  }, []);
+
+  const legaldata = [one, two, three, four, five, six, seven];
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Background Image */}
-      <div className="abouthero bg-gradient-to-r from-blue-900 to-blue-800 bg-cover bg-center">
+      <div
+        className="abouthero bg-gradient-to-r from-blue-900 to-blue-800 bg-cover bg-center"
+        data-aos="fade-up"
+      >
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center py-20">
             <div className="w-full lg:w-1/2 text-white p-12 lg:p-20">
@@ -17,8 +39,9 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+
       {/* Our Founders Section */}
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 py-20" data-aos="fade-up">
         <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">
           Our Founding
         </h2>
@@ -28,25 +51,47 @@ const AboutUs = () => {
           convert the Security risk environment into one free of anxieties.
           Oscar Newman Concept Limited employs Enterprise Security Risk
           Management ideas and ways to democratize peace of mind and achieve
-          positive inclusion for all people, corporate and individual.
+          positive inclusion for all people, corporate and individual. Oscar
+          Newman Concept Limited has worked in various sectors of the economy,
+          including oil and gas, hospitality, education, financial institutions,
+          religious, retail, government, transportation, real estate,
+          manufacturing, agriculture, maritime, entertainment, and media. We are
+          devoted to providing exceptional services and quality products that
+          secure our clients' assets and things that are important to them on a
+          regular and ongoing basis.
         </p>
         <p className="text-lg text-gray-700">
-          Oscar Newman Concept Limited has worked in various sectors of the
-          economy, including oil and gas, hospitality, education, financial
-          institutions, religious, retail, government, transportation, real
-          estate, manufacturing, agriculture, maritime, entertainment, and
-          media. We are devoted to providing exceptional services and quality
-          products that secure our clients' assets and things that are important
-          to them on a regular and ongoing basis.
+          Our crucial success element is our employees, who are global in
+          perspective, capable, committed, and confident, with an overall
+          customer oriented approach that has continued to set us apart from the
+          competition. We go above and beyond to collaborate with our clients
+          and ensure that we are an important asset inside their own value
+          chain, meeting and exceeding their expectations for overall business
+          objectives attainment. Our procedures are built in accordance with
+          global standards and best industry practices; we are now examining our
+          processes in order to align with and get ISO certification for Quality
+          service under the auspices of SON. 3. We have collaborations all
+          around the world to attest to our well acknowledged capacity to tackle
+          any security risk management work, regardless of scale, size,
+          location, or complexity. ADT (USA), TYCO (USA), SECURENVOY (Canada),
+          and FIRECHUTE are among our partners : Firechute (Germany). Dahua
+          (China) , HikVision (China), DFence (Israel), SOPHOS (USA), FORTINET
+          and others.
         </p>
       </div>
+
+      {/* Founders Section */}
       <div className="space-y-12">
+        <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">
+          Our Founders
+        </h2>
         {founders.map((founder, index) => (
           <div
             key={index}
             className={`flex flex-col lg:flex-row items-center ${
               index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
             }`}
+            data-aos="fade-up"
           >
             <div className="w-full lg:w-1/2 p-6">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
@@ -59,28 +104,38 @@ const AboutUs = () => {
                 src={founder.image}
                 alt={founder.name}
                 className="rounded-lg shadow-xl w-80 h-80 object-cover"
+                data-aos="zoom-in"
               />
             </div>
           </div>
         ))}
       </div>
-      <div>
+
+      {/* Vision, Mission, and Values */}
+      <div data-aos="fade-up">
         <VisionMissionValues />
       </div>
+
       {/* Legal Operating Document Section */}
-      <div className="container mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">
+      <div className="container mx-auto px-6 py-20" data-aos="flip-up">
+        <h2 className="text-3xl font-bold mb-8 text-gray-800 text-center uppercase tracking-wide">
           Legal Operating Document
         </h2>
-        <div className="flex justify-center">
-          <img
-            src="/api/placeholder/600/400"
-            alt="Legal Document"
-            className="rounded-lg shadow-xl"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+          {legaldata.map((item, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src={item}
+                alt="Legal Document"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
-      ;
     </div>
   );
 };
@@ -93,18 +148,24 @@ const VisionMissionValues = () => {
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {/* Our Vision */}
-        <div className="bg-white shadow-lg rounded-lg p-8 text-center border-t-4 border-blue-700">
+        <div
+          className="bg-white shadow-lg rounded-lg p-8 text-center border-t-4 border-blue-700"
+          data-aos="fade-right"
+        >
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">
             Our Vision
           </h3>
           <p className="text-gray-600">
             To be the leading security solutions provider, leveraging technology
-            to create a safer world for individuals and businesses.
+            to create a safer world.
           </p>
         </div>
 
         {/* Our Mission */}
-        <div className="bg-white shadow-lg rounded-lg p-8 text-center border-t-4 border-green-700">
+        <div
+          className="bg-white shadow-lg rounded-lg p-8 text-center border-t-4 border-green-700"
+          data-aos="fade-up"
+        >
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">
             Our Mission
           </h3>
@@ -115,7 +176,10 @@ const VisionMissionValues = () => {
         </div>
 
         {/* Our Values */}
-        <div className="bg-white shadow-lg rounded-lg p-8 text-center border-t-4 border-yellow-700">
+        <div
+          className="bg-white shadow-lg rounded-lg p-8 text-center border-t-4 border-yellow-700"
+          data-aos="fade-left"
+        >
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">
             Our Values
           </h3>
@@ -243,8 +307,13 @@ Nigeria).
   },
   {
     name: "Navy Commodore Etim Eefiong (Rtd.)",
-    description:
-      "He retired from the Navy in 2016 as Navy Commodore. He has served for over 30 years in the Military, led several operations in Bayelsa, Rivers state and Lagos. He is a well-disciplined officer with eyes for details and focus on efficiency. After his retirement, he attended the Lagos Business school, where he was exposed to principles regarding business and civil relationship. He is well suited to handle our land and maritime security operations, as well as physical training for the guarding unit. He is married with Children.",
+    description: `He retired from the Navy in 2016 as Navy Commodore.
+       He has served for over 30 years in the Military, led several operations in Bayelsa,
+       Rivers state and Lagos. He is a well-disciplined officer with eyes for details and focus on
+       efficiency. After his retirement, he attended the Lagos Business school, where he was exposed
+       to principles regarding business and civil relationship. He is well suited to handle our land
+       and maritime security operations, as well as physical training for the guarding unit. He
+       is married with Children.`,
     image: "/images/etim.jpg",
   },
 ];
