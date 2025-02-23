@@ -13,6 +13,7 @@ import Blogpage from "../components/home/Blogpage";
 import AllBlog from "../components/home/AllBlog";
 import CreateAdmin from "../admin/dashboard/createAdmin";
 import Post from "../admin/dashboard/post";
+import AboutUs from "../components/home/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactUs />,
+      },
+      {
+        path: "aboutus",
+        element: <AboutUs />,
       },
       {
         path: "blog/:id",
