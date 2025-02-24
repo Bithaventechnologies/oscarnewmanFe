@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroImg from "../assets/heroImg.svg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [direction, setDirection] = useState(0);
+
+  const nav = useNavigate();
 
   const variants = {
     enter: (direction: number) => ({
@@ -164,10 +167,21 @@ const Hero = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                <button className="px-6 py-2 text-lg font-semibold border-2 border-[#fd7904] text-[#fd7904] rounded-lg hover:bg-[#fd7904] hover:text-white transition-all duration-300">
+                <button
+                  className="px-6 py-2 text-lg font-semibold border-2 border-[#fd7904] text-[#fd7904] rounded-lg hover:bg-[#fd7904] hover:text-white transition-all duration-300"
+                  onClick={() => {
+                    nav("aboutus");
+                  }}
+                >
                   Learn More
                 </button>
-                <button className="px-6 py-2 text-lg font-semibold bg-[#fd7904] text-white rounded-lg hover:bg-[#e56c00] transition-all duration-300">
+                <button
+                  className="px-6 py-2 text-lg font-semibold bg-[#fd7904] text-white rounded-lg hover:bg-[#e56c00] transition-all duration-300"
+                  onClick={() => {
+                    console.log("navigating to contact page");
+                    nav("contact");
+                  }}
+                >
                   Book a Consultation
                 </button>
               </motion.div>
