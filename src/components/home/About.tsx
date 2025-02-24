@@ -18,6 +18,7 @@ import otherstauff from "../../assets/others.jpg";
 import Youngstaff from "../../assets/youngstaff.jpg";
 import cyber from "../../assets/cyberr.jpg";
 import cctv from "../../assets/cctv.jpg";
+import { useNavigate } from "react-router-dom";
 
 interface AboutSectionProps {
   title: string;
@@ -106,6 +107,8 @@ const AboutSection: React.FC<AboutSectionProps> = ({
 };
 
 const About: React.FC = () => {
+  const nav = useNavigate();
+
   return (
     <Element name="about" className="bg-gray-50">
       <section
@@ -135,7 +138,12 @@ const About: React.FC = () => {
               <button className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-lg transition-all">
                 Our Services
               </button>
-              <button className="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg transition-all">
+              <button
+                className="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg transition-all"
+                onClick={() => {
+                  nav("contact");
+                }}
+              >
                 Contact Us
               </button>
             </div>
