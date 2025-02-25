@@ -18,6 +18,8 @@ const AboutUs = () => {
   }, []);
 
   const legaldata = [one, two, three, four, five, six, seven];
+  console.log(legaldata);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Background Image */}
@@ -117,7 +119,7 @@ const AboutUs = () => {
       </div>
 
       {/* Legal Operating Document Section */}
-      <div className="container mx-auto px-6 py-20" data-aos="flip-up">
+      {/* <div className="container mx-auto px-6 py-20" data-aos="flip-up">
         <h2 className="text-3xl font-bold mb-8 text-gray-800 text-center uppercase tracking-wide">
           Legal Operating Document
         </h2>
@@ -135,7 +137,7 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
