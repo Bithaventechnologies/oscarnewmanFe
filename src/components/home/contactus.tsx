@@ -54,7 +54,7 @@ const ContactUs: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-4 text-gray-800">
               <FaPhoneAlt className="text-orange-500 text-xl" />
-              <span className="text-lg">+1 234 567 890</span>
+              <span className="text-lg">08033475167, 090916963126</span>
             </div>
             <div className="flex items-center gap-4 text-gray-800">
               <FaEnvelope className="text-orange-500 text-xl" />
@@ -63,7 +63,7 @@ const ContactUs: React.FC = () => {
             <div className="flex items-start gap-4 text-gray-800">
               <FaMapMarkerAlt className="text-orange-500 text-xl" />
               <span className="text-lg">
-                123 Security St, Safe City, NY 10001
+                Suite 18 & 19, MIB Plaza 1st Avenue, Gwarimpa Abuja
               </span>
             </div>
           </div>
