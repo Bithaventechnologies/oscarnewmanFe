@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import avatar from "../../assets/avatar.png";
 import { FaStar } from "react-icons/fa";
 import { AiFillLike } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Testimonials = () => {
   const settings = {
@@ -38,6 +39,8 @@ const Testimonials = () => {
       <div className={`custom-dot relative bottom-44 custom-dot-${i}`}></div>
     ),
   };
+
+  const navigate = useNavigate();
 
   const testimonials = [
     {
@@ -108,11 +111,14 @@ const Testimonials = () => {
       <div className="bg-[#FD7904] lg:w-[90%] rounded-md w-full mx-auto lg:-mt-12 -mt-20  flex items-center flex-col lg:flex-row gap-6 lg:gap-0 justify-between text-white p-4 lg:p-12">
         <div>
           <h1 className="text-bold text-[16px] lg:text-3xl">
-            Ready to live without safety worries?
+            Power to live Safely
           </h1>
           <p>Let&apos;s get you started</p>
         </div>
-        <button className="bg-[#09032e] hover:bg-gray-100 hover:text-black transition duration-300 cursor-pointer py-3 px-11 rounded-[10px] text-lg  text-white">
+        <button
+          onClick={() => navigate("/contact")}
+          className="bg-[#09032e] hover:bg-gray-100 hover:text-black transition duration-300 cursor-pointer py-3 px-11 rounded-[10px] text-lg  text-white"
+        >
           Contact us
         </button>
       </div>

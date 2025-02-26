@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import one from "../../assets/Screenshot_23-2-2025_75329_.jpeg";
-import two from "../../assets/Screenshot_23-2-2025_7533_.jpeg";
-import three from "../../assets/Screenshot_23-2-2025_75345_.jpeg";
-import four from "../../assets/Screenshot_23-2-2025_75413_.jpeg";
-import five from "../../assets/Screenshot_23-2-2025_75430_.jpeg";
+// import one from "../../assets/Screenshot_23-2-2025_75329_.jpeg";
+// import two from "../../assets/Screenshot_23-2-2025_7533_.jpeg";
+// import three from "../../assets/Screenshot_23-2-2025_75345_.jpeg";
+// import four from "../../assets/Screenshot_23-2-2025_75413_.jpeg";
+// import five from "../../assets/Screenshot_23-2-2025_75430_.jpeg";
 import six from "../../assets/Screenshot_23-2-2025_75451_.jpeg";
 import seven from "../../assets/Screenshot_23-2-2025_75513_.jpeg";
 
@@ -17,7 +17,7 @@ const AboutUs = () => {
     });
   }, []);
 
-  const legaldata = [one, two, three, four, five, six, seven];
+  const legaldata = [six, seven];
   console.log(legaldata);
 
   return (
@@ -119,7 +119,7 @@ const AboutUs = () => {
       </div>
 
       {/* Legal Operating Document Section */}
-      {/* <div className="container mx-auto px-6 py-20" data-aos="flip-up">
+      <div className="container mx-auto px-6 py-20" data-aos="flip-up">
         <h2 className="text-3xl font-bold mb-8 text-gray-800 text-center uppercase tracking-wide">
           Legal Operating Document
         </h2>
@@ -137,7 +137,7 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

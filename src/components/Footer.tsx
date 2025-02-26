@@ -96,15 +96,17 @@ const Footer: React.FC = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200">
                 <MdLocationOn className="text-xl text-orange-400 flex-shrink-0" />
-                <p className="text-sm">203, Oakwook, 23b Creeks Avenue</p>
+                <p className="text-sm">
+                  Suite 18 & 19, MIB Plaza 1st Avenue, Gwarimpa Abuja
+                </p>
               </div>
               <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200">
                 <IoIosCall className="text-xl text-orange-400 flex-shrink-0" />
-                <p className="text-sm">07081101605</p>
+                <p className="text-sm">08033475167, 090916963126</p>
               </div>
               <div className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200">
                 <IoMdMail className="text-xl text-orange-400 flex-shrink-0" />
-                <p className="text-sm">oscarnewman@gmail.com</p>
+                <p className="text-sm">info@oscarnewmangroup.org</p>
               </div>
             </div>
           </div>
