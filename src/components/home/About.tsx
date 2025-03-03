@@ -14,7 +14,7 @@ import {
 import sec from "../../assets/sec.png";
 import teaching from "../../assets/teaching.jpg";
 import ourstaff from "../../assets/ourr.jpg";
-import otherstauff from "../../assets/others.jpg";
+import otherstauff from "../../assets/critical.jpg";
 import telematics from "../../assets/telematics.jpg";
 import cyber from "../../assets/cyberr.jpg";
 import cctv from "../../assets/cctv.jpg";
@@ -22,11 +22,12 @@ import { useNavigate } from "react-router-dom";
 
 interface AboutSectionProps {
   title: string;
-  description: string;
+  description: React.ReactNode;
   image: string;
   imageRight?: boolean;
   icons?: LucideIcon[];
   specialText?: string;
+  link?: string; // Add link property
 }
 
 const AboutSection: React.FC<AboutSectionProps> = ({
@@ -36,6 +37,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   imageRight = true,
   icons = [],
   specialText,
+  link, // Add link property
 }) => {
   const ContentSection = () => (
     <motion.div
@@ -48,6 +50,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         <p className="text-orange-600 font-semibold text-lg">{specialText}</p>
       )}
       <p className="text-gray-700 leading-relaxed">{description}</p>
+      <p className="text-gray-700 leading-relaxed">{link}</p>
       {icons.length > 0 && (
         <div className="flex space-x-4 pt-4">
           {icons.map((Icon, index) => (
@@ -192,11 +195,40 @@ At Oscarnewman, we understand the importance of securing critical infrastructure
         icons={[Award, Target]}
         specialText="Protecting What Matters Most"
       />
-
       <AboutSection
         title="SOS and Response"
-        description={`At Oscarnewman, we're committed to providing innovative safety solutions that empower individuals and communities. We're proud to partner with  to offer on-demand safety services, ensuring that help is always within reach.
-  Our partnership with  is built on a shared commitment to empowering safety and security. By combining Sety's innovative SOS messaging technology with Oscarnewman's expertise in response services, we're creating a safer, more responsive community.`}
+        description={
+          <>
+            At Oscarnewman, we're committed to providing innovative safety
+            solutions that empower individuals and communities. We're proud to
+            partner with{" "}
+            <a
+              href="https://www.sety.com/contact-us"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline-none hover:text-blue-800"
+            >
+              Sety{" "}
+            </a>{" "}
+            to offer on-demand safety services, ensuring that help is always
+            within reach.
+            <br />
+            Our partnership with Sety is built on a shared commitment to
+            empowering safety and security. By combining{" "}
+            <a
+              href="https://www.sety.com/contact-us"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline-none hover:text-blue-800"
+            >
+              Sety{" "}
+            </a>{" "}
+            innovative SOS messaging technology with Oscarnewman's expertise in
+            response services, we're creating a safer, more responsive
+            community.
+            <br />
+          </>
+        }
         image={ourstaff}
         imageRight={true}
         icons={[Zap, ShieldCheck]}
