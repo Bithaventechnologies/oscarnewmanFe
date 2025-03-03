@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 const Header = () => {
   return (
     <div
-      className="bg-[#09032e] -mb-1 py-2 lg:px-18 flex justify-between items-center w-full h-[10vh]"
+      className="bg-[#09032e] -mb-1 py-2 lg:px-18 px-2 flex justify-between items-center w-full h-[10vh]"
       id="home"
     >
       <Link to="/">

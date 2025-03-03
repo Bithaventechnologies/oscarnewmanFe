@@ -60,7 +60,7 @@ const Navbar = () => {
 
       {/* Mobile Sidebar Button */}
       <div
-        className="lg:hidden text-white text-[24px] cursor-pointer"
+        className="lg:hidden text-white text-[24px] cursor-pointer px-10"
         onClick={() => setOpenSidebar(!openSidebar)}
       >
         {!openSidebar ? <GiHamburgerMenu /> : <IoCloseSharp />}
