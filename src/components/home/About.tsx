@@ -15,7 +15,7 @@ import sec from "../../assets/sec.png";
 import teaching from "../../assets/teaching.jpg";
 import ourstaff from "../../assets/ourr.jpg";
 import otherstauff from "../../assets/others.jpg";
-import Youngstaff from "../../assets/youngstaff.jpg";
+import telematics from "../../assets/telematics.jpg";
 import cyber from "../../assets/cyberr.jpg";
 import cctv from "../../assets/cctv.jpg";
 import { useNavigate } from "react-router-dom";
@@ -167,32 +167,42 @@ const About: React.FC = () => {
         imageRight={false}
         icons={[Globe, Zap]}
       />
-
       <AboutSection
-        title="Young and Diverse Workforce"
-        description="Our team embodies the future of security – young, diverse, and technology-driven. We recruit top talent, providing them with opportunities to grow, innovate, and transform the security landscape with fresh perspectives and advanced technological skills."
-        image={Youngstaff}
+        title="Unlock the Power of Telematics with Oscarnewman"
+        description="At Oscarnewman, we're committed to helping you optimize your fleet operations, improve driver safety, and reduce costs. Our comprehensive telematics services provide real-time insights and data-driven solutions to transform your business.
+
+  Our Telematics Services:
+  - 🚗 GPS Tracking: Optimize route planning, reduce fuel consumption, and improve delivery times.
+  - 🚦 Driver Behavior Monitoring: Track speeding, braking, and acceleration to enhance safety.
+  - 🔧 Vehicle Performance Monitoring: Monitor fuel consumption, engine health, and maintenance needs.
+  - 🛣️ Route Optimization: Plan efficient routes to lower emissions and improve deliveries.
+  - ⚙️ Maintenance Alerts: Get automated reminders for scheduled maintenance to reduce downtime."
+        image={telematics}
         imageRight={true}
         icons={[Users, Zap]}
-        specialText="Empowering the Next Generation of Security Professionals"
+        specialText="Enhance your fleet efficiency with real-time tracking and smart analytics."
       />
 
       <AboutSection
-        title="Continuous Innovation"
-        description="We are committed to staying ahead of emerging security threats through continuous learning and technological advancement. Our young professionals bring fresh insights, technological prowess, and adaptive thinking to develop next-generation security solutions."
+        title="Critical Infrastructure Security Solutions"
+        description="Oscarnewman provides comprehensive security solutions for critical infrastructure, ensuring the safety and security of borders, pipelines, airlines, and water bodies.
+At Oscarnewman, we understand the importance of securing critical infrastructure. Our team of experts provides customized security solutions tailored to meet the unique needs of each client. With Oscarnewman, you can trust that your critical infrastructure is secure and protected."
         image={otherstauff}
         imageRight={false}
         icons={[Award, Target]}
+        specialText="Protecting What Matters Most"
       />
 
       <AboutSection
-        title="Technology-Driven Security"
-        description="Leveraging the digital native skills of our young workforce, we integrate advanced technologies like AI, machine learning, and real-time data analytics into our security strategies. Our approach ensures proactive, intelligent, and adaptive security solutions."
+        title="SOS and Response"
+        description={`At Oscarnewman, we're committed to providing innovative safety solutions that empower individuals and communities. We're proud to partner with  to offer on-demand safety services, ensuring that help is always within reach.
+  Our partnership with  is built on a shared commitment to empowering safety and security. By combining Sety's innovative SOS messaging technology with Oscarnewman's expertise in response services, we're creating a safer, more responsive community.`}
         image={ourstaff}
         imageRight={true}
         icons={[Zap, ShieldCheck]}
         specialText="Digital Natives, Cutting-Edge Solutions"
       />
+
       <AboutSection
         title="Cybersecurity Solutions"
         description="Protect Your Digital World with Oscar Newman. 
