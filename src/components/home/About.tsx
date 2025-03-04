@@ -11,7 +11,7 @@ import {
   Users,
 } from "lucide-react";
 
-import sec from "../../assets/sec.png";
+import sec from "../../assets/secureplace.jpg";
 import teaching from "../../assets/teaching.jpg";
 import ourstaff from "../../assets/ourr.jpg";
 import otherstauff from "../../assets/critical.jpg";
