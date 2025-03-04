@@ -2,7 +2,7 @@ import { RouterProvider } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { router } from "./Routes/routes";
 import { useEffect, useState } from "react";
-import logo from "../src/assets/logo.svg";
+import logo from "../src/assets/newlogorem.png";
 
 import { motion } from "framer-motion";
 
