@@ -76,7 +76,7 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    let interval: number | undefined;
+    let interval: NodeJS.Timeout | undefined;
     if (isAutoPlaying) {
       interval = setInterval(() => {
         setDirection(1);
