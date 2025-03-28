@@ -115,16 +115,15 @@ const Footer: React.FC = () => {
           <FooterSection title="Quick Links">
             <div className="flex flex-col gap-3">
               <FooterLink to="/">Home</FooterLink>
-              <FooterLink to="/about">About</FooterLink>
-              <FooterLink to="/register">Register</FooterLink>
+              <FooterLink to="/aboutus">About</FooterLink>
             </div>
           </FooterSection>
 
           {/* Legal */}
           <FooterSection title="Legal">
             <div className="flex flex-col gap-3">
-              <FooterLink to="/terms">Terms of Service</FooterLink>
-              <FooterLink to="/privacy">Privacy Policy</FooterLink>
+              <FooterLink to="/">Terms of Service</FooterLink>
+              <FooterLink to="/">Privacy Policy</FooterLink>
             </div>
           </FooterSection>
 
