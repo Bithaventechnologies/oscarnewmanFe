@@ -14,6 +14,13 @@ import AllBlog from "../components/home/AllBlog";
 import CreateAdmin from "../admin/dashboard/createAdmin";
 import Post from "../admin/dashboard/post";
 import AboutUs from "../components/home/AboutUs";
+import Ourstory from "../page/About/ourstory";
+import WhyUs from "../page/About/whyus";
+import JoinTeam from "../page/About/jointeam";
+
+import BookConsultation from "../components/home/book";
+import PhysicalSecurity from "../page/services/physical";
+import DigitalSecurity from "../page/services/digital";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +46,30 @@ export const router = createBrowserRouter([
       {
         path: "allblog",
         element: <AllBlog />,
+      },
+      {
+        path: "our-story",
+        element: <Ourstory />,
+      },
+      {
+        path: "why-us",
+        element: <WhyUs />,
+      },
+      {
+        path: "join",
+        element: <JoinTeam />,
+      },
+      {
+        path: "book",
+        element: <BookConsultation />,
+      },
+      {
+        path: "physical-security",
+        element: <PhysicalSecurity />,
+      },
+      {
+        path: "digital-security",
+        element: <DigitalSecurity />,
       },
     ],
   },

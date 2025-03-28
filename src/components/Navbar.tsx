@@ -15,14 +15,14 @@ const Navbar = () => {
     { name: "Home", link: "/", isRoute: true },
     {
       name: "About",
-      link: "aboutus",
+      link: "",
       isRoute: true,
       dropdown: [
-        { name: "Our Story", link: "/about/story", isRoute: true },
-        { name: "Why Us", link: "/about/team", isRoute: true },
-        { name: "Contact Us", link: "mission", isRoute: false },
-        { name: "Join Our Team", link: "mission", isRoute: false },
-        { name: "Quality policy statement", link: "mission", isRoute: false },
+        { name: "Our Story", link: "/our-story", isRoute: true },
+        { name: "Why Us", link: "/why-us", isRoute: true },
+        { name: "Contact Us", link: "contact", isRoute: true },
+        { name: "Join Our Team", link: "join", isRoute: true },
+        { name: "Quality policy statement", link: "qps", isRoute: false },
       ],
     },
     {
@@ -30,30 +30,30 @@ const Navbar = () => {
       link: "services",
       isRoute: false,
       dropdown: [
-        { name: "Physical Security", link: "/services/1", isRoute: true },
+        { name: "Physical Security", link: "physical-security", isRoute: true },
         {
           name: "Digital Security and Technologies ",
-          link: "services-section",
-          isRoute: false,
+          link: "digital-security",
+          isRoute: true,
         },
         {
           name: "Identity Access Management ",
-          link: "/services/3",
+          link: "identity",
           isRoute: true,
         },
         {
           name: "Security Education and Training ",
-          link: "/services/3",
+          link: "security-education",
           isRoute: true,
         },
         {
           name: "Cyber Security ",
-          link: "/services/3",
+          link: "cybersecurity",
           isRoute: true,
         },
         {
           name: "Security Risk Advisory and Management ",
-          link: "/services/3",
+          link: "security-risk",
           isRoute: true,
         },
       ],

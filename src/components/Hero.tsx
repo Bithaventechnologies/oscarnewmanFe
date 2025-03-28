@@ -179,7 +179,7 @@ const Hero = () => {
                   className="px-6 py-2 text-lg font-semibold bg-[#fd7904] text-white rounded-lg hover:bg-[#e56c00] transition-all duration-300"
                   onClick={() => {
                     console.log("navigating to contact page");
-                    nav("contact");
+                    nav("book");
                   }}
                 >
                   Book a Consultation
