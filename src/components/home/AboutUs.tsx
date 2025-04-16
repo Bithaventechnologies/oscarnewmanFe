@@ -1,11 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import one from "../../assets/Screenshot_23-2-2025_75329_.jpeg";
-// import two from "../../assets/Screenshot_23-2-2025_7533_.jpeg";
-// import three from "../../assets/Screenshot_23-2-2025_75345_.jpeg";
-// import four from "../../assets/Screenshot_23-2-2025_75413_.jpeg";
-// import five from "../../assets/Screenshot_23-2-2025_75430_.jpeg";
+
 import six from "../../assets/Screenshot_23-2-2025_75451_.jpeg";
 import seven from "../../assets/Screenshot_23-2-2025_75513_.jpeg";
 
@@ -19,6 +15,25 @@ const AboutUs = () => {
 
   const legaldata = [six, seven];
   console.log(legaldata);
+
+  const [selectedFounder, setSelectedFounder] = useState<Founder | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  interface Founder {
+    name: string;
+    description: string;
+    image: string;
+  }
+
+  const openModal = (founder: Founder) => {
+    setSelectedFounder(founder);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedFounder(null);
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -83,34 +98,30 @@ const AboutUs = () => {
       </div>
 
       {/* Founders Section */}
-      <div className="space-y-12">
+
+      <div className="space-y-12 px-4">
         <h2 className="text-3xl font-bold mb-6 text-gray-800 text-center">
           Our Founders
         </h2>
-        {founders.map((founder, index) => (
-          <div
-            key={index}
-            className={`flex flex-col lg:flex-row items-center ${
-              index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-            }`}
-            data-aos="fade-up"
-          >
-            <div className="w-full lg:w-1/2 p-6">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                {founder.name}
-              </h3>
-              <p className="text-gray-700">{founder.description}</p>
-            </div>
-            <div className="w-full lg:w-1/2 p-6 flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {founders.map((founder, index) => (
+            <div
+              key={index}
+              className="cursor-pointer flex flex-col items-center text-center p-4  rounded-lg shadow hover:shadow-xl transition"
+              onClick={() => openModal(founder)}
+              data-aos="fade-up"
+            >
               <img
                 src={founder.image}
                 alt={founder.name}
-                className="rounded-lg shadow-xl w-80 h-80 object-cover"
-                data-aos="zoom-in"
+                className="rounded-full w-40 h-40 object-cover mb-4"
               />
+              <h3 className="text-xl font-bold text-gray-800">
+                {founder.name}
+              </h3>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Vision, Mission, and Values */}
@@ -138,6 +149,32 @@ const AboutUs = () => {
           ))}
         </div>
       </div>
+      {/* Founder Modal */}
+      {isModalOpen && selectedFounder && (
+        <div className="fixed inset-0 bg-[#0303034D] flex justify-center items-center z-50">
+          <div className="bg-white overflow-y-auto max-h-[80vh] rounded-lg p-6 max-w-2xl w-full relative shadow-xl">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+              onClick={closeModal}
+            >
+              ✕
+            </button>
+            <div className="flex flex-col items-center">
+              <img
+                src={selectedFounder.image}
+                alt={selectedFounder.name}
+                className="rounded-full w-40 h-40 object-cover mb-4"
+              />
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                {selectedFounder.name}
+              </h3>
+              <p className="text-gray-700 whitespace-pre-line text-sm leading-relaxed text-center">
+                {selectedFounder.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -244,7 +281,7 @@ Austria. My duties at IAEA included development of concepts for safeguarding nuc
 material worldwide.
 He is well travelled, a man well respected in the oil and gas sector for his integrity and 
 dedication to duty.
-He is currently playing the advisory role in matters relating to Oil and gas sector for Oscar `,
+He is currently playing the advisory role in matters relating to Oil and gas sector for Oscar Newman `,
     image: "/images/dapo.jpg",
   },
   {
