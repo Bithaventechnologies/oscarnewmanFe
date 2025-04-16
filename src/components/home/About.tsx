@@ -172,14 +172,14 @@ const About: React.FC = () => {
       />
       <AboutSection
         title="Unlock the Power of Telematics with Oscarnewman"
-        description="At Oscarnewman, we're committed to helping you optimize your fleet operations, improve driver safety, and reduce costs. Our comprehensive telematics services provide real-time insights and data-driven solutions to transform your business.
+        description="At Oscarnewman, we are dedicated to enhancing your fleet operations through data-driven telematics solutions. Our services provide real-time insights that help reduce costs, improve driver behavior, and optimize overall efficiency.
 
-  Our Telematics Services:
-  - 🚗 GPS Tracking: Optimize route planning, reduce fuel consumption, and improve delivery times.
-  - 🚦 Driver Behavior Monitoring: Track speeding, braking, and acceleration to enhance safety.
-  - 🔧 Vehicle Performance Monitoring: Monitor fuel consumption, engine health, and maintenance needs.
-  - 🛣️ Route Optimization: Plan efficient routes to lower emissions and improve deliveries.
-  - ⚙️ Maintenance Alerts: Get automated reminders for scheduled maintenance to reduce downtime."
+  Our Telematics Services include:
+  - GPS Tracking: Streamline route planning, minimize fuel consumption, and improve delivery timelines.
+  - Driver Behavior Monitoring: Analyze patterns such as speeding, harsh braking, and rapid acceleration to promote safer driving.
+  - Vehicle Performance Monitoring: Gain visibility into fuel usage, engine condition, and maintenance needs.
+  - Route Optimization: Plan efficient routes to lower operational costs and emissions.
+  - Maintenance Alerts: Receive timely notifications for routine servicing, reducing vehicle downtime and improving reliability."
         image={telematics}
         imageRight={true}
         icons={[Users, Zap]}
