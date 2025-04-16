@@ -54,7 +54,7 @@ const ContactUs: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-4 text-gray-800">
               <FaPhoneAlt className="text-orange-500 text-xl" />
-              <span className="text-lg">08033475167, 090916963126</span>
+              <span className="text-lg">+234 803 347 5167, 090916963126</span>
             </div>
             <div className="flex items-center gap-4 text-gray-800">
               <FaEnvelope className="text-orange-500 text-xl" />

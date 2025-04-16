@@ -174,9 +174,8 @@ const Footer: React.FC = () => {
               © {new Date().getFullYear()} OscarNewman. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <FooterLink to="/privacy">Privacy</FooterLink>
-              <FooterLink to="/terms">Terms</FooterLink>
-              <FooterLink to="/sitemap">Sitemap</FooterLink>
+              <FooterLink to="/">Privacy</FooterLink>
+              <FooterLink to="/">Terms</FooterLink>
             </div>
           </div>
         </div>

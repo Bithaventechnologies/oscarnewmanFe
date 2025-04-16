@@ -194,8 +194,8 @@ const BookConsultation = () => {
               <div className="flex items-start">
                 <FaPhoneAlt className="text-blue-600 mt-1 mr-4" />
                 <div>
-                  <h4 className="font-medium">Emergency Hotline</h4>
-                  <p className="text-gray-600">+1 (888) 555-SAFE</p>
+                  <h4 className="font-medium">Hotline</h4>
+                  <p className="text-gray-600">+234 803 347 5167</p>
                   <p className="text-sm text-gray-500">
                     24/7 immediate response
                   </p>
@@ -206,7 +206,7 @@ const BookConsultation = () => {
                 <MdEmail className="text-blue-600 mt-1 mr-4 text-xl" />
                 <div>
                   <h4 className="font-medium">General Inquiries</h4>
-                  <p className="text-gray-600">security@oscarnewman.com</p>
+                  <p className="text-gray-600">info@oscarnewmangroup.org</p>
                   <p className="text-sm text-gray-500">
                     Response within 2 business hours
                   </p>
@@ -218,9 +218,9 @@ const BookConsultation = () => {
                 <div>
                   <h4 className="font-medium">Headquarters</h4>
                   <p className="text-gray-600">
-                    350 Security Plaza, Suite 1200
+                    Suite 18 & 19, MIB Plaza 1st Avenue,
                   </p>
-                  <p className="text-gray-600">New York, NY 10001</p>
+                  <p className="text-gray-600">Gwarimpa Abuja</p>
                 </div>
               </div>
 
@@ -228,8 +228,8 @@ const BookConsultation = () => {
                 <FaClock className="text-blue-600 mt-1 mr-4" />
                 <div>
                   <h4 className="font-medium">Consultation Hours</h4>
-                  <p className="text-gray-600">Monday-Friday: 8am-8pm EST</p>
-                  <p className="text-gray-600">Saturday: 10am-4pm EST</p>
+                  <p className="text-gray-600">Monday-Friday: 8am-8pm WAT</p>
+                  <p className="text-gray-600">Saturday: 10am-4pm WAT</p>
                 </div>
               </div>
             </div>

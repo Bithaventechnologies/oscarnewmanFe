@@ -14,13 +14,17 @@ import AllBlog from "../components/home/AllBlog";
 import CreateAdmin from "../admin/dashboard/createAdmin";
 import Post from "../admin/dashboard/post";
 import AboutUs from "../components/home/AboutUs";
-import Ourstory from "../page/About/ourstory";
+
 import WhyUs from "../page/About/whyus";
 import JoinTeam from "../page/About/jointeam";
 
 import BookConsultation from "../components/home/book";
 import PhysicalSecurity from "../page/services/physical";
 import DigitalSecurity from "../page/services/digital";
+import Identity from "../page/services/identity";
+import SecurityEd from "../page/services/securityed";
+import Cybersecurity from "../page/services/cybersecurity";
+import SecureRisk from "../page/services/securerisk";
 
 export const router = createBrowserRouter([
   {
@@ -35,10 +39,7 @@ export const router = createBrowserRouter([
         path: "contact",
         element: <ContactUs />,
       },
-      {
-        path: "aboutus",
-        element: <AboutUs />,
-      },
+
       {
         path: "blog/:id",
         element: <Blogpage />,
@@ -49,7 +50,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "our-story",
-        element: <Ourstory />,
+        element: <AboutUs />,
       },
       {
         path: "why-us",
@@ -70,6 +71,22 @@ export const router = createBrowserRouter([
       {
         path: "digital-security",
         element: <DigitalSecurity />,
+      },
+      {
+        path: "identity",
+        element: <Identity />,
+      },
+      {
+        path: "security-education",
+        element: <SecurityEd />,
+      },
+      {
+        path: "cybersecurity",
+        element: <Cybersecurity />,
+      },
+      {
+        path: "security-risk",
+        element: <SecureRisk />,
       },
     ],
   },
